@@ -7,6 +7,9 @@ target 'GG App' do
   inhibit_all_warnings!
 
   # Pods for GG App
+  pod 'SwiftGen'
+  pod 'SwiftLint'
+  pod 'Factory', '~> 1.2.0'
   pod 'FlowStacks'
 
   target 'GG AppTests' do

@@ -1,5 +1,5 @@
 //
-//  GG_AppUITestsLaunchTests.swift
+//  GGAppUITestsLaunchTests.swift
 //  GG AppUITests
 //
 //  Created by Kocka Dominik Csaba on 2022. 10. 23..
@@ -7,14 +7,18 @@
 
 import XCTest
 
-final class GG_AppUITestsLaunchTests: XCTestCase {
-
+final class GGAppUITestsLaunchTests: XCTestCase {
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
     override func setUpWithError() throws {
+        try super.setUpWithError()
         continueAfterFailure = false
+    }
+
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
     }
 
     func testLaunch() throws {

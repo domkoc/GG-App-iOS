@@ -1,0 +1,17 @@
+strings:
+  inputs:
+    - GG App/Resources/Localizable.strings
+  outputs:
+    params:
+      enumName: Strings
+    templateName: structured-swift5
+    output: GG App/Resources/Generated/Localizable.swift
+
+xcassets:
+  inputs:
+    - GG App/Resources/Assets.xcassets
+  outputs:
+    params:
+      enumName: Assets
+    templateName: swift5
+    output: GG App/Resources/Generated/Assets.swift

@@ -17,6 +17,7 @@
 		D5DED77E29055AC900E5AB73 /* GG_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED77D29055AC900E5AB73 /* GG_AppTests.swift */; };
 		D5DED78829055AC900E5AB73 /* GG_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */; };
 		D5DED78A29055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */; };
+		D5DED79A2905665100E5AB73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5DED7992905665100E5AB73 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D5DED78329055AC900E5AB73 /* GG AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GG AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITests.swift; sourceTree = "<group>"; };
 		D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D5DED7992905665100E5AB73 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E082CB05E37862035CEF4CF6 /* Pods-GG AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG AppTests.debug.xcconfig"; path = "Target Support Files/Pods-GG AppTests/Pods-GG AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E11A0D281AD1320B641B7CA6 /* Pods-GG App-GG AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GG_App_GG_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +125,7 @@
 			children = (
 				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
 				D5DED76E29055AC600E5AB73 /* ContentView.swift */,
-				D5DED77029055AC800E5AB73 /* Assets.xcassets */,
+				D5DED7982905663000E5AB73 /* Resources */,
 				D5DED77229055AC800E5AB73 /* Preview Content */,
 			);
 			path = "GG App";
@@ -154,6 +156,23 @@
 			path = "GG AppUITests";
 			sourceTree = "<group>";
 		};
+		D5DED7982905663000E5AB73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED79B2905674800E5AB73 /* Generated */,
+				D5DED77029055AC800E5AB73 /* Assets.xcassets */,
+				D5DED7992905665100E5AB73 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D5DED79B2905674800E5AB73 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		F87EA554675FC9E2BEF47740 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +183,6 @@
 				E082CB05E37862035CEF4CF6 /* Pods-GG AppTests.debug.xcconfig */,
 				FE97B2621A2BC5E228DEB8C0 /* Pods-GG AppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +193,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5DED78D29055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG App" */;
 			buildPhases = (
+				D5DED7972905658500E5AB73 /* SwiftGen */,
+				D5DED7962905653200E5AB73 /* SwiftLint */,
 				7F745DEE91627C19CB73F96B /* [CP] Check Pods Manifest.lock */,
 				D5DED76529055AC600E5AB73 /* Sources */,
 				D5DED76629055AC600E5AB73 /* Frameworks */,
@@ -278,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5DED77429055AC800E5AB73 /* Preview Assets.xcassets in Resources */,
+				D5DED79A2905665100E5AB73 /* Localizable.strings in Resources */,
 				D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +419,44 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D5DED7962905653200E5AB73 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $PRODUCT_NAME\nif [[ -f \"${PODS_ROOT}/SwiftLint/swiftlint\" ]]; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"error: SwiftLint is not installed. Run 'pod install --repo-update' to install it.\"\n  return -1\nfi\n";
+		};
+		D5DED7972905658500E5AB73 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \".swiftgen.yml\"\nelse\n  echo \"error: SwiftGen is not installed. Run 'bundle exec pod install --repo-update' to install it.\"\n  return -1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

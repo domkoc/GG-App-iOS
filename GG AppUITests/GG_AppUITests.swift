@@ -1,5 +1,5 @@
 //
-//  GG_AppUITests.swift
+//  GGAppUITests.swift
 //  GG AppUITests
 //
 //  Created by Kocka Dominik Csaba on 2022. 10. 23..
@@ -7,27 +7,19 @@
 
 import XCTest
 
-final class GG_AppUITests: XCTestCase {
-
+final class GGAppUITests: XCTestCase {
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        try super.setUpWithError()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testLaunchPerformance() throws {
