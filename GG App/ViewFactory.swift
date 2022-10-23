@@ -8,7 +8,7 @@
 import Factory
 
 enum ViewFactory {
-    static func contentView() -> ContentView {
-        Container.contentView()
+    static func welcomeView() -> WelcomeView {
+        Container.welcomeView()
     }
 }

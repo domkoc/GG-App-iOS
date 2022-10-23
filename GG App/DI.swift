@@ -8,10 +8,10 @@
 import Factory
 
 extension Container {
-    static let contentView = Factory {
-        ContentView(vm: contentViewModel())
+    static let welcomeView = Factory {
+        WelcomeView(vm: welcomeViewModel())
     }
-    private static let contentViewModel = Factory {
-        ContentView.ViewModel()
+    private static let welcomeViewModel = Factory {
+        WelcomeView.ViewModel()
     }
 }
