@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */; };
+		D5DED76F29055AC600E5AB73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76E29055AC600E5AB73 /* ContentView.swift */; };
+		D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DED77029055AC800E5AB73 /* Assets.xcassets */; };
+		D5DED77429055AC800E5AB73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DED77329055AC800E5AB73 /* Preview Assets.xcassets */; };
+		D5DED77E29055AC900E5AB73 /* GG_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED77D29055AC900E5AB73 /* GG_AppTests.swift */; };
+		D5DED78829055AC900E5AB73 /* GG_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */; };
+		D5DED78A29055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5DED77A29055AC900E5AB73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5DED76129055AC600E5AB73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5DED76829055AC600E5AB73;
+			remoteInfo = "GG App";
+		};
+		D5DED78429055AC900E5AB73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5DED76129055AC600E5AB73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5DED76829055AC600E5AB73;
+			remoteInfo = "GG App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5DED76929055AC600E5AB73 /* GG App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GG App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppApp.swift; sourceTree = "<group>"; };
+		D5DED76E29055AC600E5AB73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5DED77029055AC800E5AB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5DED77329055AC800E5AB73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5DED77929055AC900E5AB73 /* GG AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GG AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DED77D29055AC900E5AB73 /* GG_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppTests.swift; sourceTree = "<group>"; };
+		D5DED78329055AC900E5AB73 /* GG AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GG AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITests.swift; sourceTree = "<group>"; };
+		D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5DED76629055AC600E5AB73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED77629055AC900E5AB73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED78029055AC900E5AB73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5DED76029055AC600E5AB73 = {
+			isa = PBXGroup;
+			children = (
+				D5DED76B29055AC600E5AB73 /* GG App */,
+				D5DED77C29055AC900E5AB73 /* GG AppTests */,
+				D5DED78629055AC900E5AB73 /* GG AppUITests */,
+				D5DED76A29055AC600E5AB73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5DED76A29055AC600E5AB73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED76929055AC600E5AB73 /* GG App.app */,
+				D5DED77929055AC900E5AB73 /* GG AppTests.xctest */,
+				D5DED78329055AC900E5AB73 /* GG AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5DED76B29055AC600E5AB73 /* GG App */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
+				D5DED76E29055AC600E5AB73 /* ContentView.swift */,
+				D5DED77029055AC800E5AB73 /* Assets.xcassets */,
+				D5DED77229055AC800E5AB73 /* Preview Content */,
+			);
+			path = "GG App";
+			sourceTree = "<group>";
+		};
+		D5DED77229055AC800E5AB73 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED77329055AC800E5AB73 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5DED77C29055AC900E5AB73 /* GG AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED77D29055AC900E5AB73 /* GG_AppTests.swift */,
+			);
+			path = "GG AppTests";
+			sourceTree = "<group>";
+		};
+		D5DED78629055AC900E5AB73 /* GG AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */,
+				D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */,
+			);
+			path = "GG AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5DED76829055AC600E5AB73 /* GG App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5DED78D29055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG App" */;
+			buildPhases = (
+				D5DED76529055AC600E5AB73 /* Sources */,
+				D5DED76629055AC600E5AB73 /* Frameworks */,
+				D5DED76729055AC600E5AB73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GG App";
+			productName = "GG App";
+			productReference = D5DED76929055AC600E5AB73 /* GG App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5DED77829055AC900E5AB73 /* GG AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5DED79029055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG AppTests" */;
+			buildPhases = (
+				D5DED77529055AC900E5AB73 /* Sources */,
+				D5DED77629055AC900E5AB73 /* Frameworks */,
+				D5DED77729055AC900E5AB73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5DED77B29055AC900E5AB73 /* PBXTargetDependency */,
+			);
+			name = "GG AppTests";
+			productName = "GG AppTests";
+			productReference = D5DED77929055AC900E5AB73 /* GG AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5DED78229055AC900E5AB73 /* GG AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5DED79329055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG AppUITests" */;
+			buildPhases = (
+				D5DED77F29055AC900E5AB73 /* Sources */,
+				D5DED78029055AC900E5AB73 /* Frameworks */,
+				D5DED78129055AC900E5AB73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5DED78529055AC900E5AB73 /* PBXTargetDependency */,
+			);
+			name = "GG AppUITests";
+			productName = "GG AppUITests";
+			productReference = D5DED78329055AC900E5AB73 /* GG AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5DED76129055AC600E5AB73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					D5DED76829055AC600E5AB73 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					D5DED77829055AC900E5AB73 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = D5DED76829055AC600E5AB73;
+					};
+					D5DED78229055AC900E5AB73 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = D5DED76829055AC600E5AB73;
+					};
+				};
+			};
+			buildConfigurationList = D5DED76429055AC600E5AB73 /* Build configuration list for PBXProject "GG App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5DED76029055AC600E5AB73;
+			productRefGroup = D5DED76A29055AC600E5AB73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5DED76829055AC600E5AB73 /* GG App */,
+				D5DED77829055AC900E5AB73 /* GG AppTests */,
+				D5DED78229055AC900E5AB73 /* GG AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5DED76729055AC600E5AB73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DED77429055AC800E5AB73 /* Preview Assets.xcassets in Resources */,
+				D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED77729055AC900E5AB73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED78129055AC900E5AB73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5DED76529055AC600E5AB73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DED76F29055AC600E5AB73 /* ContentView.swift in Sources */,
+				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED77529055AC900E5AB73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DED77E29055AC900E5AB73 /* GG_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5DED77F29055AC900E5AB73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DED78A29055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift in Sources */,
+				D5DED78829055AC900E5AB73 /* GG_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5DED77B29055AC900E5AB73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5DED76829055AC600E5AB73 /* GG App */;
+			targetProxy = D5DED77A29055AC900E5AB73 /* PBXContainerItemProxy */;
+		};
+		D5DED78529055AC900E5AB73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5DED76829055AC600E5AB73 /* GG App */;
+			targetProxy = D5DED78429055AC900E5AB73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5DED78B29055AC900E5AB73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5DED78C29055AC900E5AB73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5DED78E29055AC900E5AB73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GG App/Preview Content\"";
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5DED78F29055AC900E5AB73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GG App/Preview Content\"";
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5DED79129055AC900E5AB73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GG App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GG App";
+			};
+			name = Debug;
+		};
+		D5DED79229055AC900E5AB73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GG App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GG App";
+			};
+			name = Release;
+		};
+		D5DED79429055AC900E5AB73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GG App";
+			};
+			name = Debug;
+		};
+		D5DED79529055AC900E5AB73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZ6PHS2957;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hu.domkoc.GG-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GG App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5DED76429055AC600E5AB73 /* Build configuration list for PBXProject "GG App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DED78B29055AC900E5AB73 /* Debug */,
+				D5DED78C29055AC900E5AB73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5DED78D29055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DED78E29055AC900E5AB73 /* Debug */,
+				D5DED78F29055AC900E5AB73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5DED79029055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DED79129055AC900E5AB73 /* Debug */,
+				D5DED79229055AC900E5AB73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5DED79329055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DED79429055AC900E5AB73 /* Debug */,
+				D5DED79529055AC900E5AB73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5DED76129055AC600E5AB73 /* Project object */;
+}
