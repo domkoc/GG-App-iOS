@@ -11,7 +11,7 @@ import SwiftUI
 struct GGAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ViewFactory.contentView()
         }
     }
 }
