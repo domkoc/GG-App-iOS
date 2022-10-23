@@ -18,6 +18,8 @@
 		D5DED78829055AC900E5AB73 /* GG_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */; };
 		D5DED78A29055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */; };
 		D5DED79A2905665100E5AB73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5DED7992905665100E5AB73 /* Localizable.strings */; };
+		D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED79C290569BD00E5AB73 /* Localizable.swift */; };
+		D5DED79F290569BD00E5AB73 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED79D290569BD00E5AB73 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		D5DED78729055AC900E5AB73 /* GG_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITests.swift; sourceTree = "<group>"; };
 		D5DED78929055AC900E5AB73 /* GG_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D5DED7992905665100E5AB73 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D5DED79C290569BD00E5AB73 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		D5DED79D290569BD00E5AB73 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E082CB05E37862035CEF4CF6 /* Pods-GG AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG AppTests.debug.xcconfig"; path = "Target Support Files/Pods-GG AppTests/Pods-GG AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E11A0D281AD1320B641B7CA6 /* Pods-GG App-GG AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GG_App_GG_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +173,8 @@
 		D5DED79B2905674800E5AB73 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				D5DED79D290569BD00E5AB73 /* Assets.swift */,
+				D5DED79C290569BD00E5AB73 /* Localizable.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -466,6 +472,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5DED76F29055AC600E5AB73 /* ContentView.swift in Sources */,
+				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
+				D5DED79F290569BD00E5AB73 /* Assets.swift in Sources */,
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
