@@ -10,7 +10,6 @@ target 'GG App' do
   pod 'SwiftGen'
   pod 'SwiftLint'
   pod 'Factory', '~> 1.2.0'
-  pod 'FlowStacks'
 
   target 'GG AppTests' do
     inherit! :search_paths

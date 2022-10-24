@@ -10,6 +10,9 @@
 		01BC12DD698821B54547E250 /* Pods_GG_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4163B0C0B10B51FB2F37E687 /* Pods_GG_AppTests.framework */; };
 		0AD1BA2F6CB7AA9ECA69B936 /* Pods_GG_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4446AB04B280CCB161E2C /* Pods_GG_App.framework */; };
 		27A95EC886ED6DF7CBDF3B65 /* Pods_GG_App_GG_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */; };
+		D55FF23729069362006A0A12 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF23629069362006A0A12 /* GameView.swift */; };
+		D55FF2392906936E006A0A12 /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF2382906936E006A0A12 /* LobbyView.swift */; };
+		D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF23A2906937E006A0A12 /* ScoreboardView.swift */; };
 		D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */; };
 		D5DED76F29055AC600E5AB73 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76E29055AC600E5AB73 /* WelcomeView.swift */; };
 		D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DED77029055AC800E5AB73 /* Assets.xcassets */; };
@@ -23,8 +26,6 @@
 		D5DED7A229056AA000E5AB73 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED7A129056AA000E5AB73 /* DI.swift */; };
 		D5DED7A429056AA900E5AB73 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED7A329056AA900E5AB73 /* ViewFactory.swift */; };
 		D5DED7A629056CFC00E5AB73 /* WelcomeView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED7A529056CFC00E5AB73 /* WelcomeView+ViewModel.swift */; };
-		D5DED7AC2905845100E5AB73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED7AB2905845100E5AB73 /* ContentView.swift */; };
-		D5DED7AE2905849600E5AB73 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED7AD2905849600E5AB73 /* ContentView+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,9 @@
 		71D4446AB04B280CCB161E2C /* Pods_GG_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GG_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E952EB7C327C4F48F48E238 /* Pods-GG App-GG AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.release.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F40A118BFC369AEE9133A4A /* Pods-GG App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App.debug.xcconfig"; path = "Target Support Files/Pods-GG App/Pods-GG App.debug.xcconfig"; sourceTree = "<group>"; };
+		D55FF23629069362006A0A12 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D55FF2382906936E006A0A12 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		D55FF23A2906937E006A0A12 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		D5DED76929055AC600E5AB73 /* GG App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GG App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppApp.swift; sourceTree = "<group>"; };
 		D5DED76E29055AC600E5AB73 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -66,8 +70,6 @@
 		D5DED7A129056AA000E5AB73 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		D5DED7A329056AA900E5AB73 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		D5DED7A529056CFC00E5AB73 /* WelcomeView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeView+ViewModel.swift"; sourceTree = "<group>"; };
-		D5DED7AB2905845100E5AB73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D5DED7AD2905849600E5AB73 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		E082CB05E37862035CEF4CF6 /* Pods-GG AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG AppTests.debug.xcconfig"; path = "Target Support Files/Pods-GG AppTests/Pods-GG AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E11A0D281AD1320B641B7CA6 /* Pods-GG App-GG AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GG_App_GG_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D55FF23C29069ED7006A0A12 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				D5DED76E29055AC600E5AB73 /* WelcomeView.swift */,
+				D5DED7A529056CFC00E5AB73 /* WelcomeView+ViewModel.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
 		D5DED76029055AC600E5AB73 = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +151,6 @@
 				D5DED77229055AC800E5AB73 /* Preview Content */,
 				D5DED7982905663000E5AB73 /* Resources */,
 				D5DED7A029056A4F00E5AB73 /* Scenes */,
-				D5DED7AB2905845100E5AB73 /* ContentView.swift */,
-				D5DED7AD2905849600E5AB73 /* ContentView+ViewModel.swift */,
 				D5DED7A129056AA000E5AB73 /* DI.swift */,
 				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
 				D5DED7A329056AA900E5AB73 /* ViewFactory.swift */,
@@ -207,6 +216,7 @@
 		D5DED7A72905793400E5AB73 /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
+				D55FF2382906936E006A0A12 /* LobbyView.swift */,
 			);
 			path = Lobby;
 			sourceTree = "<group>";
@@ -214,6 +224,7 @@
 		D5DED7A82905794100E5AB73 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D55FF23629069362006A0A12 /* GameView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -221,6 +232,7 @@
 		D5DED7A92905795A00E5AB73 /* Scoreboard */ = {
 			isa = PBXGroup;
 			children = (
+				D55FF23A2906937E006A0A12 /* ScoreboardView.swift */,
 			);
 			path = Scoreboard;
 			sourceTree = "<group>";
@@ -228,8 +240,7 @@
 		D5DED7AA2905796A00E5AB73 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				D5DED76E29055AC600E5AB73 /* WelcomeView.swift */,
-				D5DED7A529056CFC00E5AB73 /* WelcomeView+ViewModel.swift */,
+				D55FF23C29069ED7006A0A12 /* WelcomeView */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -254,9 +265,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5DED78D29055AC900E5AB73 /* Build configuration list for PBXNativeTarget "GG App" */;
 			buildPhases = (
+				7F745DEE91627C19CB73F96B /* [CP] Check Pods Manifest.lock */,
 				D5DED7972905658500E5AB73 /* SwiftGen */,
 				D5DED7962905653200E5AB73 /* SwiftLint */,
-				7F745DEE91627C19CB73F96B /* [CP] Check Pods Manifest.lock */,
 				D5DED76529055AC600E5AB73 /* Sources */,
 				D5DED76629055AC600E5AB73 /* Frameworks */,
 				D5DED76729055AC600E5AB73 /* Resources */,
@@ -527,11 +538,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5DED79F290569BD00E5AB73 /* Assets.swift in Sources */,
-				D5DED7AC2905845100E5AB73 /* ContentView.swift in Sources */,
-				D5DED7AE2905849600E5AB73 /* ContentView+ViewModel.swift in Sources */,
 				D5DED7A229056AA000E5AB73 /* DI.swift in Sources */,
+				D55FF23729069362006A0A12 /* GameView.swift in Sources */,
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
+				D55FF2392906936E006A0A12 /* LobbyView.swift in Sources */,
 				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
+				D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */,
 				D5DED7A429056AA900E5AB73 /* ViewFactory.swift in Sources */,
 				D5DED76F29055AC600E5AB73 /* WelcomeView.swift in Sources */,
 				D5DED7A629056CFC00E5AB73 /* WelcomeView+ViewModel.swift in Sources */,

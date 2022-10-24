@@ -6,7 +6,6 @@
 //
 
 import Combine
-import FlowStacks
 
 extension WelcomeView {
     final class ViewModel: ObservableObject {
