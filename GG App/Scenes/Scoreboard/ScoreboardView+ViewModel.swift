@@ -17,5 +17,20 @@ extension ScoreboardView {
             }
             return ScoreboardDTO(players: players)
         }
+        @Published var scoreData = ScoreboardDTO()
+
+        func getData() {
+            ScoreboardAPI.getScoreboard(completion: updateScore)
+        }
+
+        func updateScore(dto: ScoreboardDTO?, error: Error?) {
+            if let dto = dto {
+                scoreData = dto
+            } else if let error = error {
+                print(error)
+            } else {
+                print("Unknown error occured. Please notify the developer!")
+            }
+        }
     }
 }

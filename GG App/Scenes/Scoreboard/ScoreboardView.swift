@@ -13,16 +13,31 @@ struct ScoreboardView: View {
     @StateObject var vm: ViewModel
 
     var body: some View {
-        List {
-            ForEach(vm.scoreboardDummyData.players!, id: \.username) { player in
-                HStack {
-                    Text(player.username!)
-                    Spacer()
-                    Text("\(player.score!)")
+        VStack {
+            if let players = vm.scoreData.players {
+                List {
+                    ForEach(players, id: \.username) { player in
+                        HStack {
+                            if let username = player.username {
+                                Text(username)
+                            } else {
+                                Text("Anonymous")
+                            }
+                            Spacer()
+                            if let score = player.score {
+                                Text("\(score)")
+                            } else {
+                                Text("No score")
+                            }
+                        }
+                    }
                 }
+            } else {
+                Text("No high scores yet!")
             }
         }
         .navigationTitle(Txt.navigationTitle)
+        .onAppear(perform: vm.getData)
     }
 }
 
