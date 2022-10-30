@@ -19,7 +19,7 @@ struct WelcomeView: View {
                 Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
-                Text("Welcome to GG App!")
+                Text(Txt.title)
                     .padding()
                 Spacer()
                 NavigationLink(Txt.Buttons.createLobbyButton) {
@@ -39,6 +39,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(vm: WelcomeView.ViewModel())
+        ViewFactory.welcomeView()
     }
 }

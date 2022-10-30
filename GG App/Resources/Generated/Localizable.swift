@@ -10,12 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
+  internal enum ScoreboardView {
+    /// Localizable.strings
+    ///   GG App
+    /// 
+    ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
+    internal static let navigationTitle = Strings.tr("Localizable", "ScoreboardView.NavigationTitle", fallback: "Scoreboard")
+  }
   internal enum WelcomeView {
+    /// Welcome to GG App!
+    internal static let title = Strings.tr("Localizable", "WelcomeView.Title", fallback: "Welcome to GG App!")
     internal enum Buttons {
-      /// Localizable.strings
-      ///   GG App
-      /// 
-      ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
+      /// Create a new lobby
       internal static let createLobbyButton = Strings.tr("Localizable", "WelcomeView.Buttons.CreateLobbyButton", fallback: "Create a new lobby")
       /// Join an existing lobby
       internal static let joinLobbyButton = Strings.tr("Localizable", "WelcomeView.Buttons.JoinLobbyButton", fallback: "Join an existing lobby")

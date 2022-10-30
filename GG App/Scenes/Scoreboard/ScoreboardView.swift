@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ScoreboardView: View {
+    typealias Txt = Strings.ScoreboardView
+
+    @StateObject var vm: ViewModel
+
     var body: some View {
-        Text("Hello, ScoreboardView!")
+        List {
+            ForEach(vm.scoreboardDummyData.players!, id: \.username) { player in
+                HStack {
+                    Text(player.username!)
+                    Spacer()
+                    Text("\(player.score!)")
+                }
+            }
+        }
+        .navigationTitle(Txt.navigationTitle)
     }
 }
 
 struct ScoreboardView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreboardView()
+        ViewFactory.scoreboardView()
     }
 }

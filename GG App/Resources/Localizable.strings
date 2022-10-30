@@ -6,6 +6,11 @@
   
 */
 
+// ScoreboardView
+"ScoreboardView.NavigationTitle" = "Scoreboard";
+
+// WelcomeView
+"WelcomeView.Title" = "Welcome to GG App!";
 "WelcomeView.Buttons.CreateLobbyButton" = "Create a new lobby";
 "WelcomeView.Buttons.JoinLobbyButton" = "Join an existing lobby";
 "WelcomeView.Buttons.ViewScoreboardButton" = "View high scores";

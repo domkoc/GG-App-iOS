@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Factory: 7bffa5f381d923eabeb750fc8f7920a4bc443220
-  SwaggerClient: 31d542e5bdb1483f9c7fda3f8b5b6fbbe4be9efb
+  SwaggerClient: b25343f8ecbede34b8a9400449c5b55330eb8f63
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 

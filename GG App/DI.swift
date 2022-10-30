@@ -24,6 +24,9 @@ extension Container {
     }
 
     static let scoreboardView = Factory {
-        ScoreboardView()
+        ScoreboardView(vm: scoreboardViewModel())
+    }
+    private static let scoreboardViewModel = Factory {
+        ScoreboardView.ViewModel()
     }
 }

@@ -280,7 +280,7 @@ first_where:
 flatmap_over_map_reduce:
   severity: error
 force_unwrapping:
-  severity: error
+  severity: warning
 ibinspectable_in_extension:
   severity: error
 identical_operands:
