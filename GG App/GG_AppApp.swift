@@ -21,8 +21,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return value
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        //GMSServices.provideAPIKey(googleMapsApiKey)
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        GMSServices.provideAPIKey(googleMapsApiKey)
         return true
     }
 }

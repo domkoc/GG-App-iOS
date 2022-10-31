@@ -1,6 +1,25 @@
 PODS:
   - Alamofire (4.9.1)
   - Factory (1.2.8)
+  - Google-Maps-iOS-Utils (4.1.0):
+    - Google-Maps-iOS-Utils/Clustering (= 4.1.0)
+    - Google-Maps-iOS-Utils/Geometry (= 4.1.0)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 4.1.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 4.1.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 4.1.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/GeometryUtils (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (4.1.0):
+    - GoogleMaps
   - GoogleMaps (7.1.0):
     - GoogleMaps/Maps (= 7.1.0)
   - GoogleMaps/Base (7.1.0)
@@ -13,6 +32,7 @@ PODS:
 
 DEPENDENCIES:
   - Factory (~> 1.2.0)
+  - Google-Maps-iOS-Utils
   - GoogleMaps
   - SwaggerClient (from `../generated`)
   - SwiftGen
@@ -22,6 +42,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Factory
+    - Google-Maps-iOS-Utils
     - GoogleMaps
     - SwiftGen
     - SwiftLint
@@ -33,11 +54,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Factory: 7bffa5f381d923eabeb750fc8f7920a4bc443220
+  Google-Maps-iOS-Utils: 3343332b18dfd5be8f1f44edd7d481ace3da4d9a
   GoogleMaps: bc56ffb0324e345a2d91bac1a64a920f9c8f1b20
   SwaggerClient: 73c7416deac64970be023fce4491fe79ccc28dd8
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: 708c7a2a6ab7cb473869a5f55156dc7259dca6e1
+PODFILE CHECKSUM: fec135cefef0a0efa6d1e2a5a92446f8280b19fa
 
 COCOAPODS: 1.11.3

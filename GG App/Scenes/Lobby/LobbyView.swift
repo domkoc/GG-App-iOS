@@ -15,6 +15,6 @@ struct LobbyView: View {
 
 struct LobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        LobbyView()
+        ViewFactory.lobbyView()
     }
 }

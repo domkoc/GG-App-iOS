@@ -8,6 +8,7 @@
 import Factory
 
 extension Container {
+    // MARK: - Welcome Scene
     static let welcomeView = Factory {
         WelcomeView(vm: welcomeViewModel())
     }
@@ -15,14 +16,24 @@ extension Container {
         WelcomeView.ViewModel()
     }
 
+    // MARK: - Game Scene
     static let gameView = Factory {
         GameView()
     }
 
+    static let mapView = Factory {
+        MapView(vm: mapViewModel())
+    }
+    private static let mapViewModel = Factory {
+        MapView.ViewModel()
+    }
+
+    // MARK: - Lobby Scene
     static let lobbyView = Factory {
         LobbyView()
     }
 
+    // MARK: - Scoreboard Scene
     static let scoreboardView = Factory {
         ScoreboardView(vm: scoreboardViewModel())
     }

@@ -11,6 +11,7 @@ target 'GG App' do
   pod 'SwiftLint'
   pod 'Factory', '~> 1.2.0'
   pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
   pod 'SwaggerClient', :path => '../generated'
 
   target 'GG AppTests' do
