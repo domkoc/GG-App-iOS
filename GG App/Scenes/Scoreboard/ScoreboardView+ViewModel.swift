@@ -12,8 +12,8 @@ extension ScoreboardView {
     final class ViewModel: ObservableObject {
         var scoreboardDummyData: ScoreboardDTO {
             var players: [ScoreboardDTOPlayers] = .init()
-            for i in 1...10 {
-                players.append(ScoreboardDTOPlayers(username: "Player\(i)", score: Int.random(in: 100..<10000)))
+            for index in 1...10 {
+                players.append(ScoreboardDTOPlayers(username: "Player\(index)", score: Int.random(in: 100..<10000)))
             }
             return ScoreboardDTO(players: players)
         }

@@ -37,8 +37,10 @@ struct WelcomeView: View {
     }
 }
 
+#if DEBUG
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         ViewFactory.welcomeView()
     }
 }
+#endif

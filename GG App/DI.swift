@@ -21,6 +21,13 @@ extension Container {
         GameView()
     }
 
+    static let streetViewView = Factory {
+        StreetViewView(vm: streetViewViewModel())
+    }
+    private static let streetViewViewModel = Factory {
+        StreetViewView.ViewModel()
+    }
+
     static let mapView = Factory {
         MapView(vm: mapViewModel())
     }

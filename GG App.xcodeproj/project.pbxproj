@@ -18,6 +18,9 @@
 		D58EBEC9290FEC9500305A27 /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBEC8290FEC9500305A27 /* GoogleMapsView.swift */; };
 		D58EBECE2910292D00305A27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBECD2910292D00305A27 /* MapView.swift */; };
 		D58EBED029102A1A00305A27 /* MapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBECF29102A1A00305A27 /* MapView+Extensions.swift */; };
+		D58EBED2291030C800305A27 /* GoogleStreetViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */; };
+		D58EBED52910333A00305A27 /* StreetViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED42910333A00305A27 /* StreetViewView.swift */; };
+		D58EBED72910334B00305A27 /* StreetViewView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED62910334B00305A27 /* StreetViewView+ViewModel.swift */; };
 		D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */; };
 		D5DED76F29055AC600E5AB73 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76E29055AC600E5AB73 /* WelcomeView.swift */; };
 		D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DED77029055AC800E5AB73 /* Assets.xcassets */; };
@@ -64,6 +67,9 @@
 		D58EBEC8290FEC9500305A27 /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
 		D58EBECD2910292D00305A27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D58EBECF29102A1A00305A27 /* MapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Extensions.swift"; sourceTree = "<group>"; };
+		D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStreetViewView.swift; sourceTree = "<group>"; };
+		D58EBED42910333A00305A27 /* StreetViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetViewView.swift; sourceTree = "<group>"; };
+		D58EBED62910334B00305A27 /* StreetViewView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StreetViewView+ViewModel.swift"; sourceTree = "<group>"; };
 		D5DED76929055AC600E5AB73 /* GG App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GG App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppApp.swift; sourceTree = "<group>"; };
 		D5DED76E29055AC600E5AB73 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D58EBEC8290FEC9500305A27 /* GoogleMapsView.swift */,
+				D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -148,6 +155,15 @@
 				D58EBECF29102A1A00305A27 /* MapView+Extensions.swift */,
 			);
 			path = MapView;
+			sourceTree = "<group>";
+		};
+		D58EBED32910331C00305A27 /* StreetViewView */ = {
+			isa = PBXGroup;
+			children = (
+				D58EBED42910333A00305A27 /* StreetViewView.swift */,
+				D58EBED62910334B00305A27 /* StreetViewView+ViewModel.swift */,
+			);
+			path = StreetViewView;
 			sourceTree = "<group>";
 		};
 		D5DED76029055AC600E5AB73 = {
@@ -254,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				D58EBECC2910291900305A27 /* MapView */,
+				D58EBED32910331C00305A27 /* StreetViewView */,
 				D55FF23629069362006A0A12 /* GameView.swift */,
 			);
 			path = Game;
@@ -610,12 +627,15 @@
 				D55FF23729069362006A0A12 /* GameView.swift in Sources */,
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
 				D58EBEC9290FEC9500305A27 /* GoogleMapsView.swift in Sources */,
+				D58EBED2291030C800305A27 /* GoogleStreetViewView.swift in Sources */,
 				D55FF2392906936E006A0A12 /* LobbyView.swift in Sources */,
 				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
 				D58EBECE2910292D00305A27 /* MapView.swift in Sources */,
 				D58EBED029102A1A00305A27 /* MapView+Extensions.swift in Sources */,
 				D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */,
 				D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */,
+				D58EBED52910333A00305A27 /* StreetViewView.swift in Sources */,
+				D58EBED72910334B00305A27 /* StreetViewView+ViewModel.swift in Sources */,
 				D5DED7A429056AA900E5AB73 /* ViewFactory.swift in Sources */,
 				D5DED76F29055AC600E5AB73 /* WelcomeView.swift in Sources */,
 				D5DED7A629056CFC00E5AB73 /* WelcomeView+ViewModel.swift in Sources */,

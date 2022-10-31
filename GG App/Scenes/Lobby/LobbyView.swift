@@ -13,8 +13,10 @@ struct LobbyView: View {
     }
 }
 
+#if DEBUG
 struct LobbyView_Previews: PreviewProvider {
     static var previews: some View {
         ViewFactory.lobbyView()
     }
 }
+#endif

@@ -18,6 +18,10 @@ enum ViewFactory {
         Container.gameView()
     }
 
+    static func streetViewView() -> StreetViewView {
+        Container.streetViewView()
+    }
+
     static func mapView() -> MapView {
         Container.mapView()
     }

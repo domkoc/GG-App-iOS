@@ -9,11 +9,13 @@ import GoogleMaps
 import SwiftUI
 
 // no changes in your AppDelegate class
+// swiftlint:disable file_types_order
 class AppDelegate: NSObject, UIApplicationDelegate {
     private var googleMapsApiKey: String {
         guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
             fatalError("Couldn't find file 'ApiKeys.plist'.")
         }
+        // swiftlint:disable legacy_objc_type
         let plist = NSDictionary(contentsOfFile: filePath)
         guard let value = plist?.object(forKey: "API_KEY") as? String else {
             fatalError("Couldn't find key 'API_KEY' in 'ApiKeys.plist'.")

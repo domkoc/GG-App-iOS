@@ -41,8 +41,10 @@ struct ScoreboardView: View {
     }
 }
 
+#if DEBUG
 struct ScoreboardView_Previews: PreviewProvider {
     static var previews: some View {
         ViewFactory.scoreboardView()
     }
 }
+#endif
