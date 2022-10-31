@@ -5,14 +5,14 @@
     "osx": "10.11",
     "tvos": "9.0"
   },
-  "homepage": "a",
-  "summary": "a",
+  "homepage": "domkoc.github.io",
+  "summary": "Api for GG App",
   "version": "0.0.1",
   "source": {
     "git": "git@github.com:swagger-api/swagger-mustache.git",
     "tag": "v1.0.0"
   },
-  "authors": "Swagger Codegen",
+  "authors": "Dominik Kocka",
   "license": "Proprietary",
   "source_files": "SwaggerClient/Classes/**/*.swift",
   "dependencies": {
