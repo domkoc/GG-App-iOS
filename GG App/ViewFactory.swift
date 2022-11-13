@@ -26,6 +26,10 @@ enum ViewFactory {
         Container.mapView()
     }
 
+    static func singleplayerView() -> SingleplayerView {
+        Container.singleplayerView()
+    }
+
     // MARK: - Lobby Scene
     static func lobbyView() -> LobbyView {
         Container.lobbyView()

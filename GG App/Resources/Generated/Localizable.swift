@@ -25,6 +25,8 @@ internal enum Strings {
       internal static let createLobbyButton = Strings.tr("Localizable", "WelcomeView.Buttons.CreateLobbyButton", fallback: "Create a new lobby")
       /// Join an existing lobby
       internal static let joinLobbyButton = Strings.tr("Localizable", "WelcomeView.Buttons.JoinLobbyButton", fallback: "Join an existing lobby")
+      /// Play Singleplayer
+      internal static let singlePlayer = Strings.tr("Localizable", "WelcomeView.Buttons.SinglePlayer", fallback: "Play Singleplayer")
       /// View high scores
       internal static let viewScoreboardButton = Strings.tr("Localizable", "WelcomeView.Buttons.ViewScoreboardButton", fallback: "View high scores")
     }

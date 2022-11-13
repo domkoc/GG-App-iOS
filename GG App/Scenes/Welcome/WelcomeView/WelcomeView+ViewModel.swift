@@ -9,5 +9,6 @@ import Combine
 
 extension WelcomeView {
     final class ViewModel: ObservableObject {
+        @Published var router = Router.shared
     }
 }

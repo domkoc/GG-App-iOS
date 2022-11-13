@@ -11,6 +11,7 @@
 
 // WelcomeView
 "WelcomeView.Title" = "Welcome to GG App!";
+"WelcomeView.Buttons.SinglePlayer" = "Play Singleplayer";
 "WelcomeView.Buttons.CreateLobbyButton" = "Create a new lobby";
 "WelcomeView.Buttons.JoinLobbyButton" = "Join an existing lobby";
 "WelcomeView.Buttons.ViewScoreboardButton" = "View high scores";

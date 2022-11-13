@@ -13,7 +13,7 @@ struct WelcomeView: View {
     @StateObject var vm: ViewModel
 
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $vm.router.path) {
             VStack {
                 Spacer()
                 Image(systemName: "globe")
@@ -22,15 +22,19 @@ struct WelcomeView: View {
                 Text(Txt.title)
                     .padding()
                 Spacer()
+                NavigationLink(Txt.Buttons.singlePlayer) {
+                    ViewFactory.singleplayerView()
+                }
+                .buttonStyle(.borderedProminent)
                 NavigationLink(Txt.Buttons.createLobbyButton) {
                     ViewFactory.gameView()
-                } .buttonStyle(.borderedProminent)
+                }.buttonStyle(.borderedProminent)
                 NavigationLink(Txt.Buttons.joinLobbyButton) {
                     ViewFactory.lobbyView()
-                } .buttonStyle(.borderedProminent)
+                }.buttonStyle(.borderedProminent)
                 NavigationLink(Txt.Buttons.viewScoreboardButton) {
                     ViewFactory.scoreboardView()
-                } .buttonStyle(.borderedProminent)
+                }.buttonStyle(.borderedProminent)
             }
             .padding()
         }

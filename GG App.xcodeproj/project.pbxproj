@@ -11,6 +11,11 @@
 		0AD1BA2F6CB7AA9ECA69B936 /* Pods_GG_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4446AB04B280CCB161E2C /* Pods_GG_App.framework */; };
 		27A95EC886ED6DF7CBDF3B65 /* Pods_GG_App_GG_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */; };
 		D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */; };
+		D53766D3292143B400CAD24E /* SingleplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D2292143B400CAD24E /* SingleplayerView.swift */; };
+		D53766D52921488C00CAD24E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D42921488C00CAD24E /* Router.swift */; };
+		D53766D729214A8D00CAD24E /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D629214A8D00CAD24E /* GameRouter.swift */; };
+		D53766D929214B0600CAD24E /* SingleplayerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D829214B0600CAD24E /* SingleplayerView+ViewModel.swift */; };
+		D53766DD292150FA00CAD24E /* GameView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766DC292150FA00CAD24E /* GameView+ViewModel.swift */; };
 		D55FF23729069362006A0A12 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF23629069362006A0A12 /* GameView.swift */; };
 		D55FF2392906936E006A0A12 /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF2382906936E006A0A12 /* LobbyView.swift */; };
 		D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FF23A2906937E006A0A12 /* ScoreboardView.swift */; };
@@ -60,6 +65,11 @@
 		7E952EB7C327C4F48F48E238 /* Pods-GG App-GG AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.release.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F40A118BFC369AEE9133A4A /* Pods-GG App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App.debug.xcconfig"; path = "Target Support Files/Pods-GG App/Pods-GG App.debug.xcconfig"; sourceTree = "<group>"; };
 		D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreboardView+ViewModel.swift"; sourceTree = "<group>"; };
+		D53766D2292143B400CAD24E /* SingleplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleplayerView.swift; sourceTree = "<group>"; };
+		D53766D42921488C00CAD24E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D53766D629214A8D00CAD24E /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		D53766D829214B0600CAD24E /* SingleplayerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingleplayerView+ViewModel.swift"; sourceTree = "<group>"; };
+		D53766DC292150FA00CAD24E /* GameView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView+ViewModel.swift"; sourceTree = "<group>"; };
 		D55FF23629069362006A0A12 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D55FF2382906936E006A0A12 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		D55FF23A2906937E006A0A12 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 				D5DED7A029056A4F00E5AB73 /* Scenes */,
 				D5DED7A129056AA000E5AB73 /* DI.swift */,
 				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
+				D53766D42921488C00CAD24E /* Router.swift */,
 				D5DED7A329056AA900E5AB73 /* ViewFactory.swift */,
 			);
 			path = "GG App";
@@ -271,7 +282,11 @@
 			children = (
 				D58EBECC2910291900305A27 /* MapView */,
 				D58EBED32910331C00305A27 /* StreetViewView */,
+				D53766D629214A8D00CAD24E /* GameRouter.swift */,
 				D55FF23629069362006A0A12 /* GameView.swift */,
+				D53766DC292150FA00CAD24E /* GameView+ViewModel.swift */,
+				D53766D2292143B400CAD24E /* SingleplayerView.swift */,
+				D53766D829214B0600CAD24E /* SingleplayerView+ViewModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -624,7 +639,9 @@
 			files = (
 				D5DED79F290569BD00E5AB73 /* Assets.swift in Sources */,
 				D5DED7A229056AA000E5AB73 /* DI.swift in Sources */,
+				D53766D729214A8D00CAD24E /* GameRouter.swift in Sources */,
 				D55FF23729069362006A0A12 /* GameView.swift in Sources */,
+				D53766DD292150FA00CAD24E /* GameView+ViewModel.swift in Sources */,
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
 				D58EBEC9290FEC9500305A27 /* GoogleMapsView.swift in Sources */,
 				D58EBED2291030C800305A27 /* GoogleStreetViewView.swift in Sources */,
@@ -632,8 +649,11 @@
 				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
 				D58EBECE2910292D00305A27 /* MapView.swift in Sources */,
 				D58EBED029102A1A00305A27 /* MapView+Extensions.swift in Sources */,
+				D53766D52921488C00CAD24E /* Router.swift in Sources */,
 				D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */,
 				D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */,
+				D53766D3292143B400CAD24E /* SingleplayerView.swift in Sources */,
+				D53766D929214B0600CAD24E /* SingleplayerView+ViewModel.swift in Sources */,
 				D58EBED52910333A00305A27 /* StreetViewView.swift in Sources */,
 				D58EBED72910334B00305A27 /* StreetViewView+ViewModel.swift in Sources */,
 				D5DED7A429056AA900E5AB73 /* ViewFactory.swift in Sources */,
