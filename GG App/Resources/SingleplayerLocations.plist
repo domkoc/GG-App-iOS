@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Aquincum</string>
+		<key>lattitude</key>
+		<real>47.561758</real>
+		<key>longitude</key>
+		<real>19.048006</real>
+		<key>seconds</key>
+		<integer>30</integer>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Infopark</string>
+		<key>lattitude</key>
+		<real>47.472515</real>
+		<key>longitude</key>
+		<real>19.059246</real>
+		<key>seconds</key>
+		<integer>30</integer>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Corvinus</string>
+		<key>lattitude</key>
+		<real>47.485821</real>
+		<key>longitude</key>
+		<real>19.057871</real>
+		<key>seconds</key>
+		<integer>30</integer>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Aréna Mall</string>
+		<key>lattitude</key>
+		<real>47.499506</real>
+		<key>longitude</key>
+		<real>19.091502</real>
+		<key>seconds</key>
+		<integer>30</integer>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Városliget</string>
+		<key>lattitude</key>
+		<real>47.514689</real>
+		<key>longitude</key>
+		<real>19.0786</real>
+		<key>seconds</key>
+		<integer>30</integer>
+	</dict>
+</array>
+</plist>

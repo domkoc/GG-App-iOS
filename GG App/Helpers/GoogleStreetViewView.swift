@@ -18,5 +18,6 @@ struct GoogleStreetViewView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: GMSPanoramaView, context: Context) {
+        mapView.moveNearCoordinate(coordinate)
     }
 }

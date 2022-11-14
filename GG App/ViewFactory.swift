@@ -7,6 +7,13 @@
 
 import Factory
 
+extension ViewFactory {
+    enum GameViewType {
+        case singleplayer
+        case multiplayer
+    }
+}
+
 enum ViewFactory {
     // MARK: - Welcome Scene
     static func welcomeView() -> WelcomeView {
@@ -14,8 +21,13 @@ enum ViewFactory {
     }
 
     // MARK: - Game Scene
-    static func gameView() -> GameView {
-        Container.gameView()
+    static func gameView(type: ViewFactory.GameViewType) -> GameView {
+        switch type {
+        case .singleplayer:
+            return Container.singleplayerGameView()
+        case .multiplayer:
+            return Container.multiplayerGameView()
+        }
     }
 
     static func streetViewView() -> StreetViewView {

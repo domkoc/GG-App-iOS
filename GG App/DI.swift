@@ -18,11 +18,17 @@ extension Container {
     }
 
     // MARK: - Game Scene
-    static let gameView = Factory {
-        GameView(vm: gameViewModel())
+    static let singleplayerGameView = Factory {
+        GameView(vm: singleplayerGameViewModel())
     }
-    private static let gameViewModel = Factory {
-        GameView.ViewModel()
+    static let multiplayerGameView = Factory {
+        GameView(vm: multiplayerGameViewModel())
+    }
+    private static let singleplayerGameViewModel = Factory {
+        GameView.ViewModel(gameService: SingleplayerService(rounds: 3))
+    }
+    private static let multiplayerGameViewModel = Factory {
+        GameView.ViewModel(gameService: MultiplayerService())
     }
 
     static let streetViewView = Factory {

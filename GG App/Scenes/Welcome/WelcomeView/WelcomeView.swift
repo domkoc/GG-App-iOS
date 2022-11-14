@@ -27,7 +27,7 @@ struct WelcomeView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 NavigationLink(Txt.Buttons.createLobbyButton) {
-                    ViewFactory.gameView()
+                    ViewFactory.gameView(type: .multiplayer)
                 }.buttonStyle(.borderedProminent)
                 NavigationLink(Txt.Buttons.joinLobbyButton) {
                     ViewFactory.lobbyView()

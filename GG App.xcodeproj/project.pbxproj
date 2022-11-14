@@ -11,6 +11,9 @@
 		0AD1BA2F6CB7AA9ECA69B936 /* Pods_GG_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4446AB04B280CCB161E2C /* Pods_GG_App.framework */; };
 		27A95EC886ED6DF7CBDF3B65 /* Pods_GG_App_GG_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */; };
 		D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */; };
+		D5372B662922AD4500D1D938 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B652922AD4500D1D938 /* GameService.swift */; };
+		D5372B682922AEAA00D1D938 /* GameServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B672922AEAA00D1D938 /* GameServiceModel.swift */; };
+		D5372B6A2922BE2A00D1D938 /* SingleplayerLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */; };
 		D53766D3292143B400CAD24E /* SingleplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D2292143B400CAD24E /* SingleplayerView.swift */; };
 		D53766D52921488C00CAD24E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D42921488C00CAD24E /* Router.swift */; };
 		D53766D729214A8D00CAD24E /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53766D629214A8D00CAD24E /* GameRouter.swift */; };
@@ -65,6 +68,9 @@
 		7E952EB7C327C4F48F48E238 /* Pods-GG App-GG AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.release.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F40A118BFC369AEE9133A4A /* Pods-GG App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App.debug.xcconfig"; path = "Target Support Files/Pods-GG App/Pods-GG App.debug.xcconfig"; sourceTree = "<group>"; };
 		D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreboardView+ViewModel.swift"; sourceTree = "<group>"; };
+		D5372B652922AD4500D1D938 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		D5372B672922AEAA00D1D938 /* GameServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceModel.swift; sourceTree = "<group>"; };
+		D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SingleplayerLocations.plist; sourceTree = "<group>"; };
 		D53766D2292143B400CAD24E /* SingleplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleplayerView.swift; sourceTree = "<group>"; };
 		D53766D42921488C00CAD24E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D53766D629214A8D00CAD24E /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D5372B642922AD3500D1D938 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5372B652922AD4500D1D938 /* GameService.swift */,
+				D5372B672922AEAA00D1D938 /* GameServiceModel.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D55FF23C29069ED7006A0A12 /* WelcomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,7 @@
 				D5DED77229055AC800E5AB73 /* Preview Content */,
 				D5DED7982905663000E5AB73 /* Resources */,
 				D5DED7A029056A4F00E5AB73 /* Scenes */,
+				D5372B642922AD3500D1D938 /* Services */,
 				D5DED7A129056AA000E5AB73 /* DI.swift */,
 				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
 				D53766D42921488C00CAD24E /* Router.swift */,
@@ -245,6 +261,7 @@
 				D58EBEC5290FE76A00305A27 /* ApiKeys.plist */,
 				D5DED77029055AC800E5AB73 /* Assets.xcassets */,
 				D5DED7992905665100E5AB73 /* Localizable.strings */,
+				D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -438,6 +455,7 @@
 				D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */,
 				D5DED79A2905665100E5AB73 /* Localizable.strings in Resources */,
 				D5DED77429055AC800E5AB73 /* Preview Assets.xcassets in Resources */,
+				D5372B6A2922BE2A00D1D938 /* SingleplayerLocations.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +658,8 @@
 				D5DED79F290569BD00E5AB73 /* Assets.swift in Sources */,
 				D5DED7A229056AA000E5AB73 /* DI.swift in Sources */,
 				D53766D729214A8D00CAD24E /* GameRouter.swift in Sources */,
+				D5372B662922AD4500D1D938 /* GameService.swift in Sources */,
+				D5372B682922AEAA00D1D938 /* GameServiceModel.swift in Sources */,
 				D55FF23729069362006A0A12 /* GameView.swift in Sources */,
 				D53766DD292150FA00CAD24E /* GameView+ViewModel.swift in Sources */,
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,

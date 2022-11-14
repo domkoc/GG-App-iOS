@@ -11,16 +11,17 @@ struct GameView: View {
     @StateObject var vm: ViewModel
 
     var body: some View {
-        NavigationLink("game") {
-            ViewFactory.streetViewView()
-        }.buttonStyle(.borderedProminent)
+        vm.streetViewView
+            .onAppear {
+                vm.getRound()
+            }
     }
 }
 
 #if DEBUG
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ViewFactory.gameView()
+        ViewFactory.gameView(type: .multiplayer)
     }
 }
 #endif

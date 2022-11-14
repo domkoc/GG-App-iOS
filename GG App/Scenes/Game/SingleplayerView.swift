@@ -13,7 +13,7 @@ struct SingleplayerView: View {
     var body: some View {
         NavigationStack(path: $vm.router.path) {
             NavigationLink("game") {
-                ViewFactory.gameView()
+                ViewFactory.gameView(type: .singleplayer)
             }.buttonStyle(.borderedProminent)
         }
     }
