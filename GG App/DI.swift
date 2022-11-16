@@ -5,19 +5,15 @@
 //  Created by Kocka Dominik Csaba on 2022. 10. 23..
 //
 
+import CoreLocation
 import Factory
 
 extension Container {
-
-    // MARK: - Welcome Scene
-    static let welcomeView = Factory {
-        WelcomeView(vm: welcomeViewModel())
-    }
-    private static let welcomeViewModel = Factory {
-        WelcomeView.ViewModel()
-    }
-
     // MARK: - Game Scene
+    private static let gameRouter = Factory(scope: .shared) {
+        GameRouter()
+    }
+
     static let singleplayerGameView = Factory {
         GameView(vm: singleplayerGameViewModel())
     }
@@ -25,10 +21,10 @@ extension Container {
         GameView(vm: multiplayerGameViewModel())
     }
     private static let singleplayerGameViewModel = Factory {
-        GameView.ViewModel(gameService: SingleplayerService(rounds: 3))
+        GameView.ViewModel(router: gameRouter(), gameService: SingleplayerService(rounds: 3))
     }
     private static let multiplayerGameViewModel = Factory {
-        GameView.ViewModel(gameService: MultiplayerService())
+        GameView.ViewModel(router: gameRouter(), gameService: MultiplayerService())
     }
 
     static let streetViewView = Factory {
@@ -38,18 +34,18 @@ extension Container {
         StreetViewView.ViewModel()
     }
 
-    static let mapView = Factory {
-        MapView(vm: mapViewModel())
+    static let mapView = ParameterFactory<(CLLocationCoordinate2D) -> Void, MapView> { completion in
+        MapView(vm: mapViewModel(completion))
     }
-    private static let mapViewModel = Factory {
-        MapView.ViewModel()
+    private static let mapViewModel = ParameterFactory<(CLLocationCoordinate2D) -> Void, MapView.ViewModel> { completion in
+        MapView.ViewModel(doneCallback: completion)
     }
 
     static let singleplayerView = Factory {
         SingleplayerView(vm: singleplayerViewModel())
     }
-    private static let singleplayerViewModel = Factory {
-        SingleplayerView.ViewModel()
+    private static let singleplayerViewModel = Factory(scope: .shared) {
+        SingleplayerView.ViewModel(router: gameRouter())
     }
 
     // MARK: - Lobby Scene
@@ -63,5 +59,13 @@ extension Container {
     }
     private static let scoreboardViewModel = Factory {
         ScoreboardView.ViewModel()
+    }
+
+    // MARK: - Welcome Scene
+    static let welcomeView = Factory {
+        WelcomeView(vm: welcomeViewModel())
+    }
+    private static let welcomeViewModel = Factory {
+        WelcomeView.ViewModel()
     }
 }

@@ -10,12 +10,30 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
+  internal enum GameView {
+    internal enum Buttons {
+      /// Localizable.strings
+      ///   GG App
+      /// 
+      ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
+      internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Ready")
+    }
+    internal enum Labels {
+      /// Loading...
+      internal static let loading = Strings.tr("Localizable", "GameView.Labels.Loading", fallback: "Loading...")
+      /// Score
+      internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
+    }
+  }
   internal enum ScoreboardView {
-    /// Localizable.strings
-    ///   GG App
-    /// 
-    ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
+    /// Scoreboard
     internal static let navigationTitle = Strings.tr("Localizable", "ScoreboardView.NavigationTitle", fallback: "Scoreboard")
+  }
+  internal enum SingleplayerView {
+    internal enum Buttons {
+      /// Start the game
+      internal static let play = Strings.tr("Localizable", "SingleplayerView.Buttons.Play", fallback: "Start the game")
+    }
   }
   internal enum WelcomeView {
     /// Welcome to GG App!

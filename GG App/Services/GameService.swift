@@ -42,7 +42,7 @@ final class SingleplayerService {
         var preparedRound = GameServiceModel.Round(tasks: [])
 
         for _ in 0..<rounds {
-            let randomIndex = Int.random(in: 0 ... plistArray!.count)
+            let randomIndex = Int.random(in: 0 ..< plistArray!.count)
             let randomLocation = plistArray?[randomIndex] as? NSDictionary
             guard
                 let title = randomLocation?.object(forKey: "title") as? String,

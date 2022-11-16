@@ -9,6 +9,10 @@ import Combine
 
 extension SingleplayerView {
     final class ViewModel: ObservableObject {
-        @Published var router = GameRouter.shared
+        @Published var router: GameRouter
+
+        init(router: GameRouter) {
+            self.router = router
+        }
     }
 }

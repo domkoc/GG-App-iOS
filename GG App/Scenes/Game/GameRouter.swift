@@ -8,9 +8,6 @@
 import SwiftUI
 
 final class GameRouter: ObservableObject {
-    static let shared = GameRouter()
-
     @Published var path = NavigationPath()
-
-    private init() { }
+    @Published var isNotOnRoot = false
 }

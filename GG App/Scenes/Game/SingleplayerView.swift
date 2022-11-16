@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SingleplayerView: View {
+    typealias Txt = Strings.SingleplayerView
+
     @StateObject var vm: ViewModel
 
     var body: some View {
         NavigationStack(path: $vm.router.path) {
-            NavigationLink("game") {
+            NavigationLink(Txt.Buttons.play) {
                 ViewFactory.gameView(type: .singleplayer)
             }.buttonStyle(.borderedProminent)
         }

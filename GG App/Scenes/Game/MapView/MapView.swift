@@ -16,6 +16,7 @@ struct MapView: View {
         }
         Button("Done") {
             print($vm.marker.position)
+            vm.doneSelecting()
         }
     }
 }
@@ -23,7 +24,7 @@ struct MapView: View {
 #if DEBUG
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        ViewFactory.mapView()
+        ViewFactory.mapView(completion: { _ in })
     }
 }
 #endif

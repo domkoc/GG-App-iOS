@@ -5,6 +5,7 @@
 //  Created by Kocka Dominik Csaba on 2022. 10. 23..
 //
 
+import CoreLocation
 import Factory
 
 extension ViewFactory {
@@ -15,11 +16,6 @@ extension ViewFactory {
 }
 
 enum ViewFactory {
-    // MARK: - Welcome Scene
-    static func welcomeView() -> WelcomeView {
-        Container.welcomeView()
-    }
-
     // MARK: - Game Scene
     static func gameView(type: ViewFactory.GameViewType) -> GameView {
         switch type {
@@ -30,16 +26,16 @@ enum ViewFactory {
         }
     }
 
-    static func streetViewView() -> StreetViewView {
-        Container.streetViewView()
-    }
-
-    static func mapView() -> MapView {
-        Container.mapView()
+    static func mapView(completion: @escaping (CLLocationCoordinate2D) -> Void) -> MapView {
+        Container.mapView(completion)
     }
 
     static func singleplayerView() -> SingleplayerView {
         Container.singleplayerView()
+    }
+
+    static func streetViewView() -> StreetViewView {
+        Container.streetViewView()
     }
 
     // MARK: - Lobby Scene
@@ -50,5 +46,10 @@ enum ViewFactory {
     // MARK: - Scoreboard Scene
     static func scoreboardView() -> ScoreboardView {
         Container.scoreboardView()
+    }
+
+    // MARK: - Welcome Scene
+    static func welcomeView() -> WelcomeView {
+        Container.welcomeView()
     }
 }

@@ -6,8 +6,16 @@
   
 */
 
+// GameView
+"GameView.Buttons.Ready" = "Ready";
+"GameView.Labels.Loading" = "Loading...";
+"GameView.Labels.Scoreboard" = "Score";
+
 // ScoreboardView
 "ScoreboardView.NavigationTitle" = "Scoreboard";
+
+// SingleplayerView
+"SingleplayerView.Buttons.Play" = "Start the game";
 
 // WelcomeView
 "WelcomeView.Title" = "Welcome to GG App!";

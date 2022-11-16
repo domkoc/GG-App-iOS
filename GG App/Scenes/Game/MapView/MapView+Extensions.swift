@@ -10,6 +10,17 @@ import GoogleMaps
 
 extension MapView {
     final class ViewModel: ObservableObject {
-        @Published var marker = GMSMarker()
+        @Published var marker: GMSMarker
+
+        private var doneCallback: (CLLocationCoordinate2D) -> Void
+
+        internal init(marker: GMSMarker = GMSMarker(), doneCallback: @escaping (CLLocationCoordinate2D) -> Void) {
+            self.marker = marker
+            self.doneCallback = doneCallback
+        }
+
+        func doneSelecting() {
+            self.doneCallback(self.marker.position)
+        }
     }
 }
