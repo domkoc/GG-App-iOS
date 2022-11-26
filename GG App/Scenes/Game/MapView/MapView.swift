@@ -13,10 +13,10 @@ struct MapView: View {
     var body: some View {
         VStack {
             GoogleMapsView(marker: $vm.marker)
-        }
-        Button("Done") {
-            print($vm.marker.position)
-            vm.doneSelecting()
+            Button("MAP Done") {
+                print($vm.marker.position)
+                vm.doneSelecting()
+            }
         }
     }
 }

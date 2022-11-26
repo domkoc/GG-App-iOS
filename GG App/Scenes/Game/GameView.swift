@@ -11,6 +11,7 @@ struct GameView: View {
     typealias Txt = Strings.GameView
 
     @StateObject var vm: ViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         Group {
@@ -22,14 +23,10 @@ struct GameView: View {
                     vm.advance()
                 }
             case .streetView:
-                if vm.tasks.isEmpty {
-                    Text("error")
-                } else {
-                    VStack {
-                        vm.streetViewView
-                        Button("next") {
-                            vm.advance()
-                        }
+                VStack {
+                    vm.streetViewView
+                    Button("next") {
+                        vm.advance()
                     }
                 }
             case .map:
@@ -38,14 +35,26 @@ struct GameView: View {
                 }
             case .scoreboard:
                 VStack {
-                    Text("scoreboard")
+                    Text(vm.score.description)
                     Spacer()
                     Button("next") {
                         vm.advance()
                     }
                 }
+            case .ended:
+                VStack {
+                    Text("ended")
+                    Button("next") {
+                        vm.advance()
+                    }
+                }
             }
-        }.onAppear(perform: vm.onAppear)
+        }.onAppear {
+            vm.navigateBack = {
+                presentationMode.wrappedValue.dismiss()
+            }
+            vm.onAppear()
+        }
     }
 }
 
