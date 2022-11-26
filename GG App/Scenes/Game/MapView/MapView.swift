@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct MapView: View {
+    typealias Txt = Strings.MapView
+
     @StateObject var vm: ViewModel
 
     var body: some View {
         VStack {
-            GoogleMapsView(marker: $vm.marker)
-            Button("MAP Done") {
+            GoogleMapsView(
+                marker: $vm.marker,
+                isNextEnabled: $vm.isButtonEnabled
+            )
+            Button(Txt.Buttons.done) {
                 print($vm.marker.position)
                 vm.doneSelecting()
             }
+            .disabled(!vm.isButtonEnabled)
         }
     }
 }

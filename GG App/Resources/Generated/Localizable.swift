@@ -12,6 +12,8 @@ import Foundation
 internal enum Strings {
   internal enum GameView {
     internal enum Buttons {
+      /// Next
+      internal static let next = Strings.tr("Localizable", "GameView.Buttons.Next", fallback: "Next")
       /// Localizable.strings
       ///   GG App
       /// 
@@ -19,10 +21,20 @@ internal enum Strings {
       internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Ready")
     }
     internal enum Labels {
+      /// The game has ended. Your score is: %@
+      internal static func gameEnded(_ p1: Any) -> String {
+        return Strings.tr("Localizable", "GameView.Labels.GameEnded", String(describing: p1), fallback: "The game has ended. Your score is: %@")
+      }
       /// Loading...
       internal static let loading = Strings.tr("Localizable", "GameView.Labels.Loading", fallback: "Loading...")
       /// Score
       internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
+    }
+  }
+  internal enum MapView {
+    internal enum Buttons {
+      /// Done
+      internal static let done = Strings.tr("Localizable", "MapView.Buttons.Done", fallback: "Done")
     }
   }
   internal enum ScoreboardView {

@@ -11,10 +11,12 @@ import SwiftUI
 // swiftlint:disable file_types_order
 struct GoogleMapsView: UIViewRepresentable {
     @Binding var marker: GMSMarker
+    @Binding var isNextEnabled: Bool
 
     func makeCoordinator() -> MapCoordinator {
         MapCoordinator(
-            marker: $marker
+            marker: $marker,
+            isNextEnabled: $isNextEnabled
         )
     }
 
@@ -36,13 +38,16 @@ struct GoogleMapsView: UIViewRepresentable {
 
 class MapCoordinator: NSObject, GMSMapViewDelegate {
     @Binding var marker: GMSMarker
+    @Binding var isNextEnabled: Bool
 
-    init(marker: Binding<GMSMarker>) {
+    init(marker: Binding<GMSMarker>, isNextEnabled: Binding<Bool>) {
         _marker = marker
+        _isNextEnabled = isNextEnabled
     }
 
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        isNextEnabled = true
     }
 }

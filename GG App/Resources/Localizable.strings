@@ -6,18 +6,23 @@
   
 */
 
-// GameView
+// MARK: - GameView
 "GameView.Buttons.Ready" = "Ready";
+"GameView.Buttons.Next" = "Next";
 "GameView.Labels.Loading" = "Loading...";
 "GameView.Labels.Scoreboard" = "Score";
+"GameView.Labels.GameEnded" = "The game has ended. Your score is: %@";
 
-// ScoreboardView
+// MARK: - MapView
+"MapView.Buttons.Done" = "Done";
+
+// MARK: - ScoreboardView
 "ScoreboardView.NavigationTitle" = "Scoreboard";
 
-// SingleplayerView
+// MARK: - SingleplayerView
 "SingleplayerView.Buttons.Play" = "Start the game";
 
-// WelcomeView
+// MARK: - WelcomeView
 "WelcomeView.Title" = "Welcome to GG App!";
 "WelcomeView.Buttons.SinglePlayer" = "Play Singleplayer";
 "WelcomeView.Buttons.CreateLobbyButton" = "Create a new lobby";

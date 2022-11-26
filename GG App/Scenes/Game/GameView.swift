@@ -25,7 +25,7 @@ struct GameView: View {
             case .streetView:
                 VStack {
                     vm.streetViewView
-                    Button("next") {
+                    Button(Txt.Buttons.next) {
                         vm.advance()
                     }
                 }
@@ -37,14 +37,14 @@ struct GameView: View {
                 VStack {
                     Text(vm.score.description)
                     Spacer()
-                    Button("next") {
+                    Button(Txt.Buttons.next) {
                         vm.advance()
                     }
                 }
             case .ended:
                 VStack {
-                    Text("ended")
-                    Button("next") {
+                    Text(Txt.Labels.gameEnded(vm.score))
+                    Button(Txt.Buttons.next) {
                         vm.advance()
                     }
                 }

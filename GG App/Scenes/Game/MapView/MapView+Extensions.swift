@@ -11,11 +11,12 @@ import GoogleMaps
 extension MapView {
     final class ViewModel: ObservableObject {
         @Published var marker: GMSMarker
+        @Published var isButtonEnabled = false
 
         private var doneCallback: (CLLocationCoordinate2D) -> Void
 
-        internal init(marker: GMSMarker = GMSMarker(), doneCallback: @escaping (CLLocationCoordinate2D) -> Void) {
-            self.marker = marker
+        internal init(doneCallback: @escaping (CLLocationCoordinate2D) -> Void) {
+            self.marker = GMSMarker()
             self.doneCallback = doneCallback
         }
 
