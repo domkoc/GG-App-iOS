@@ -15,25 +15,31 @@ struct ScoreboardView: View {
     var body: some View {
         VStack {
             if let players = vm.scoreData.players {
-                List {
-                    ForEach(players, id: \.username) { player in
-                        HStack {
-                            if let username = player.username {
-                                Text(username)
-                            } else {
-                                Text("Anonymous")
-                            }
-                            Spacer()
-                            if let score = player.score {
-                                Text("\(score)")
-                            } else {
-                                Text("No score")
+                if players.isEmpty {
+                    Text(Txt.Labels.noHighScores)
+                        .font(.title)
+                } else {
+                    List {
+                        ForEach(players, id: \.username) { player in
+                            HStack {
+                                if let username = player.username {
+                                    Text(username)
+                                } else {
+                                    Text(Txt.Labels.noUsername)
+                                }
+                                Spacer()
+                                if let score = player.score {
+                                    Text(score.description)
+                                } else {
+                                    Text(Txt.Labels.noScore)
+                                }
                             }
                         }
                     }
                 }
             } else {
-                Text("No high scores yet!")
+                Text(Txt.Labels.noConnection)
+                    .font(.title)
             }
         }
         .navigationTitle(Txt.navigationTitle)

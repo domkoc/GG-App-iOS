@@ -18,15 +18,17 @@ internal enum Strings {
       ///   GG App
       /// 
       ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
-      internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Ready")
+      internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Start!")
     }
     internal enum Labels {
       /// The game has ended. Your score is: %@
       internal static func gameEnded(_ p1: Any) -> String {
         return Strings.tr("Localizable", "GameView.Labels.GameEnded", String(describing: p1), fallback: "The game has ended. Your score is: %@")
       }
-      /// Loading...
-      internal static let loading = Strings.tr("Localizable", "GameView.Labels.Loading", fallback: "Loading...")
+      /// The game is loading, please wait...
+      internal static let loading = Strings.tr("Localizable", "GameView.Labels.Loading", fallback: "The game is loading, please wait...")
+      /// The game has loaded. Are you ready?
+      internal static let readyDescription = Strings.tr("Localizable", "GameView.Labels.ReadyDescription", fallback: "The game has loaded. Are you ready?")
       /// Score
       internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
     }
@@ -40,11 +42,27 @@ internal enum Strings {
   internal enum ScoreboardView {
     /// Scoreboard
     internal static let navigationTitle = Strings.tr("Localizable", "ScoreboardView.NavigationTitle", fallback: "Scoreboard")
+    internal enum Labels {
+      /// Connection lost. Please try again!
+      internal static let noConnection = Strings.tr("Localizable", "ScoreboardView.Labels.NoConnection", fallback: "Connection lost. Please try again!")
+      /// No high scores yet!
+      internal static let noHighScores = Strings.tr("Localizable", "ScoreboardView.Labels.NoHighScores", fallback: "No high scores yet!")
+      /// No score
+      internal static let noScore = Strings.tr("Localizable", "ScoreboardView.Labels.NoScore", fallback: "No score")
+      /// Anonymous
+      internal static let noUsername = Strings.tr("Localizable", "ScoreboardView.Labels.NoUsername", fallback: "Anonymous")
+    }
   }
   internal enum SingleplayerView {
     internal enum Buttons {
-      /// Start the game
-      internal static let play = Strings.tr("Localizable", "SingleplayerView.Buttons.Play", fallback: "Start the game")
+      /// Play!
+      internal static let play = Strings.tr("Localizable", "SingleplayerView.Buttons.Play", fallback: "Play!")
+    }
+    internal enum Labels {
+      /// In singleplayer mode you play alone and get points according to the distance of your answer from the correct location
+      internal static let description = Strings.tr("Localizable", "SingleplayerView.Labels.Description", fallback: "In singleplayer mode you play alone and get points according to the distance of your answer from the correct location")
+      /// Singleplayer
+      internal static let title = Strings.tr("Localizable", "SingleplayerView.Labels.Title", fallback: "Singleplayer")
     }
   }
   internal enum WelcomeView {

@@ -7,9 +7,10 @@
 */
 
 // MARK: - GameView
-"GameView.Buttons.Ready" = "Ready";
+"GameView.Buttons.Ready" = "Start!";
 "GameView.Buttons.Next" = "Next";
-"GameView.Labels.Loading" = "Loading...";
+"GameView.Labels.ReadyDescription" = "The game has loaded. Are you ready?";
+"GameView.Labels.Loading" = "The game is loading, please wait...";
 "GameView.Labels.Scoreboard" = "Score";
 "GameView.Labels.GameEnded" = "The game has ended. Your score is: %@";
 
@@ -18,9 +19,15 @@
 
 // MARK: - ScoreboardView
 "ScoreboardView.NavigationTitle" = "Scoreboard";
+"ScoreboardView.Labels.NoUsername" = "Anonymous";
+"ScoreboardView.Labels.NoScore" = "No score";
+"ScoreboardView.Labels.NoHighScores" = "No high scores yet!";
+"ScoreboardView.Labels.NoConnection" = "Connection lost. Please try again!";
 
 // MARK: - SingleplayerView
-"SingleplayerView.Buttons.Play" = "Start the game";
+"SingleplayerView.Buttons.Play" = "Play!";
+"SingleplayerView.Labels.Title" = "Singleplayer";
+"SingleplayerView.Labels.Description" = "In singleplayer mode you play alone and get points according to the distance of your answer from the correct location";
 
 // MARK: - WelcomeView
 "WelcomeView.Title" = "Welcome to GG App!";

@@ -19,8 +19,13 @@ struct GameView: View {
             case .loading:
                 Text(Txt.Labels.loading)
             case.ready:
-                Button(Txt.Buttons.ready) {
-                    vm.advance()
+                VStack {
+                    Spacer()
+                    Text(Txt.Labels.readyDescription)
+                    Spacer()
+                    Button(Txt.Buttons.ready) {
+                        vm.advance()
+                    }
                 }
             case .streetView:
                 VStack {
