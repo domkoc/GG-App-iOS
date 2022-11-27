@@ -14,7 +14,7 @@ struct GameView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
-        Group {
+        ZStack {
             switch vm.gameState {
             case .loading:
                 Text(Txt.Labels.loading)
@@ -42,8 +42,16 @@ struct GameView: View {
                 VStack {
                     Text(vm.score.description)
                     Spacer()
-                    Button(Txt.Buttons.next) {
-                        vm.advance()
+                    HStack {
+                        if vm.hasAllSubmitted {
+                            Button(Txt.Buttons.next) {
+                                vm.advance()
+                            }
+                        } else {
+                            Button("reload") {
+                                vm.pollState()
+                            }
+                        }
                     }
                 }
             case .ended:
@@ -54,11 +62,33 @@ struct GameView: View {
                     }
                 }
             }
+            VStack {
+                if vm.gameState == .streetView || vm.gameState == .map {
+                    Text(vm.timeRemaining.description)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
+                        .background(.black.opacity(0.75))
+                        .clipShape(Capsule())
+                }
+                Spacer()
+            }
         }.onAppear {
             vm.navigateBack = {
                 presentationMode.wrappedValue.dismiss()
             }
             vm.onAppear()
+        }
+        .onReceive(vm.timer) { _ in
+            if vm.timeRemaining > 0 {
+                vm.timeRemaining -= 1
+            } else {
+//                vm.answers.append(AnswersDTOAnswers(title: vm.currentTask?.title, coordinates: RoundDTOCoordinates()))
+//                vm.advanceToScoreboard()
+                print("timesup")
+                vm.timer.upstream.connect().cancel()
+            }
         }
     }
 }

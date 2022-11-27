@@ -19,6 +19,7 @@ extension GameView {
         case scoreboard
         case ended
     }
+
     final class ViewModel: ObservableObject {
         @Published var router: GameRouter
         @Published var streetViewView: GoogleStreetViewView
@@ -26,6 +27,9 @@ extension GameView {
         @Published var isSelectionOnMapDone = false
         @Published var error: Error?
         @Published var score = 0
+        @Published var timeRemaining = 10000
+        @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        @Published var hasAllSubmitted = false
         var tasks: [GameServiceModel.Task] {
             didSet {
                 if gameState == .loading, !tasks.isEmpty {
@@ -89,7 +93,18 @@ extension GameView.ViewModel {
         case .scoreboard:
             self.advanceToNextTaskOrRound()
         case .ended:
-            self.navigateBack?()
+            self.endGame()
+        }
+    }
+
+    func endGame() {
+        gameService.submitScore { _, error in
+            switch error {
+            case .none:
+                self.navigateBack?()
+            case .some(let error):
+                self.error = error
+            }
         }
     }
 
@@ -98,11 +113,13 @@ extension GameView.ViewModel {
             self.getRound()
         } else {
             self.currentTask = self.tasks.popLast()
+            self.timeRemaining = Int(self.currentTask?.seconds ?? 100)
+            self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
             self.gameState = .streetView
         }
     }
 
-    private func advanceToScoreboard() {
+    func advanceToScoreboard() {
         self.gameState = .scoreboard
         gameService.submitAnswers(
             answers: AnswersDTO(
@@ -117,6 +134,42 @@ extension GameView.ViewModel {
                 self?.score = userScore ?? 0
                 if player?.isPlaying == false {
                     self?.gameState = .ended
+                } else {
+                    var stillWaiting = false
+                    var allInNextRound = true
+                    gameState?.players?.forEach { player in
+                        if player.hasSubmittedAnswer == false {
+                            stillWaiting = true
+                        } else if player.hasSubmittedAnswer == true {
+                            allInNextRound = false
+                        }
+                    }
+                    self?.hasAllSubmitted = !stillWaiting || allInNextRound
+                }
+            case .some(let error):
+                self?.error = error
+            }
+        }
+    }
+
+    func pollState() {
+        gameService.getState { [weak self] gameState, error in
+            switch error {
+            case .none:
+                let player = gameState?.players?.first(where: { $0.username == self?.gameService.username })
+                if player?.isPlaying == false {
+                    self?.gameState = .ended
+                } else {
+                    var stillWaiting = false
+                    var allInNextRound = true
+                    gameState?.players?.forEach { player in
+                        if player.hasSubmittedAnswer == false {
+                            stillWaiting = true
+                        } else if player.hasSubmittedAnswer == true {
+                            allInNextRound = false
+                        }
+                    }
+                    self?.hasAllSubmitted = !stillWaiting || allInNextRound
                 }
             case .some(let error):
                 self?.error = error

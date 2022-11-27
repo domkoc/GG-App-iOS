@@ -13,6 +13,8 @@ protocol GameServiceProtocol {
 
     func getRound(completion: @escaping ((_ data: GameServiceModel.Round?, _ error: Error?) -> Void))
     func submitAnswers(answers: AnswersDTO, completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void))
+    func getState(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void))
+    func submitScore(completion: @escaping ((_ data: Void?, _ error: Error?) -> Void))
 }
 
 // MARK: - Multiplayer
@@ -85,8 +87,17 @@ extension MultiplayerService: GameServiceProtocol {
             }
         }
     }
+
     func getGameState(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
         GameAPI.getGameState(lobbyId: self.lobbyId, completion: completion)
+    }
+
+    func getState(completion: @escaping ((SwaggerClient.GameStateDTO?, Error?) -> Void)) {
+        GameAPI.getGameState(lobbyId: self.lobbyId, completion: completion)
+    }
+
+    func submitScore(completion: @escaping ((Void?, Error?) -> Void)) {
+        ScoreboardAPI.postScore(body: NewScoreDTO(lobbyId: self.lobbyId, username: self.username), completion: completion)
     }
 }
 
@@ -132,6 +143,23 @@ final class SingleplayerService {
 }
 
 extension SingleplayerService: GameServiceProtocol {
+    func getState(completion: @escaping ((SwaggerClient.GameStateDTO?, Error?) -> Void)) {
+        completion(
+            .init(
+                state: .start,
+                players: [
+                    .init(
+                        username: self.username,
+                        score: Int(self.score.rounded()),
+                        isPlaying: self.answerCount < round.tasks.count,
+                        hasSubmittedAnswer: true
+                    )
+                ]
+            ),
+            nil
+        )
+    }
+
     func getRound(completion: @escaping ((GameServiceModel.Round?, Error?) -> Void)) {
         completion(round, nil)
     }
@@ -149,7 +177,8 @@ extension SingleplayerService: GameServiceProtocol {
                     .init(
                     username: answers.username,
                     score: Int(self.score.rounded()),
-                    isPlaying: self.answerCount < round.tasks.count
+                    isPlaying: self.answerCount < round.tasks.count,
+                    hasSubmittedAnswer: true
                     )
                 ]
             ),
@@ -176,6 +205,10 @@ extension SingleplayerService: GameServiceProtocol {
             longitude: to.longitude
         )
         return from.distance(from: to)
+    }
+
+    func submitScore(completion: @escaping ((Void?, Error?) -> Void)) {
+        completion(nil, nil)
     }
 }
 
