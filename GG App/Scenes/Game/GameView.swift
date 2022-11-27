@@ -84,8 +84,8 @@ struct GameView: View {
             if vm.timeRemaining > 0 {
                 vm.timeRemaining -= 1
             } else {
-//                vm.answers.append(AnswersDTOAnswers(title: vm.currentTask?.title, coordinates: RoundDTOCoordinates()))
-//                vm.advanceToScoreboard()
+                vm.answers.append(AnswersDTOAnswers(title: vm.currentTask?.title, coordinates: RoundDTOCoordinates()))
+                vm.advanceToScoreboard()
                 print("timesup")
                 vm.timer.upstream.connect().cancel()
             }

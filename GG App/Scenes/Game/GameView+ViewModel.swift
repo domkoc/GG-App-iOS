@@ -113,7 +113,7 @@ extension GameView.ViewModel {
             self.getRound()
         } else {
             self.currentTask = self.tasks.popLast()
-            self.timeRemaining = Int(self.currentTask?.seconds ?? 100)
+            self.timeRemaining = Int(self.currentTask?.seconds ?? 90) + 10
             self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
             self.gameState = .streetView
         }
