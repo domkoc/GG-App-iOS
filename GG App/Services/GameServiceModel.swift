@@ -50,8 +50,8 @@ extension GameServiceModel {
             guard
                 let dtoTitle = dto.title,
                 let dtoCoordinates = dto.coordinates,
-                let dtoLattitude = dtoCoordinates.lattitude,
-                let dtoLongitude = dtoCoordinates.longitude,
+                let dtoLattitude = dtoCoordinates.lattitude, // FIXME: remove swap on backend fix
+                let dtoLongitude = dtoCoordinates.longitude, // FIXME: remove swap on backend fix
                 let dtoSeconds = dto.seconds
             else {
                 print("-> Error: Can't deserialize RoundDTOTasks")

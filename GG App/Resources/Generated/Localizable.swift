@@ -33,10 +33,60 @@ internal enum Strings {
       internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
     }
   }
+  internal enum LobbyView {
+    internal enum Error {
+      /// Error! Please try again.
+      internal static let unknown = Strings.tr("Localizable", "LobbyView.Error.unknown", fallback: "Error! Please try again.")
+    }
+    internal enum Host {
+      internal enum Buttons {
+        /// Start game!
+        internal static let start = Strings.tr("Localizable", "LobbyView.Host.Buttons.Start", fallback: "Start game!")
+      }
+      internal enum Labels {
+        /// The lobby id is:
+        internal static let lobbyId = Strings.tr("Localizable", "LobbyView.Host.Labels.LobbyId", fallback: "The lobby id is:")
+      }
+    }
+    internal enum Join {
+      internal enum Buttons {
+        /// Join lobby!
+        internal static let join = Strings.tr("Localizable", "LobbyView.Join.Buttons.Join", fallback: "Join lobby!")
+      }
+      internal enum Inputs {
+        /// id here
+        internal static let lobbyId = Strings.tr("Localizable", "LobbyView.Join.Inputs.LobbyId", fallback: "id here")
+        /// username here
+        internal static let username = Strings.tr("Localizable", "LobbyView.Join.Inputs.Username", fallback: "username here")
+      }
+      internal enum Labels {
+        /// Enter lobby id:
+        internal static let lobbyId = Strings.tr("Localizable", "LobbyView.Join.Labels.LobbyId", fallback: "Enter lobby id:")
+        /// Enter username:
+        internal static let username = Strings.tr("Localizable", "LobbyView.Join.Labels.Username", fallback: "Enter username:")
+      }
+    }
+    internal enum Labels {
+      /// Multiplayer lobby
+      internal static let title = Strings.tr("Localizable", "LobbyView.Labels.Title", fallback: "Multiplayer lobby")
+    }
+  }
   internal enum MapView {
     internal enum Buttons {
       /// Done
       internal static let done = Strings.tr("Localizable", "MapView.Buttons.Done", fallback: "Done")
+    }
+  }
+  internal enum MultiplayerView {
+    internal enum Buttons {
+      /// Play!
+      internal static let play = Strings.tr("Localizable", "MultiplayerView.Buttons.Play", fallback: "Play!")
+    }
+    internal enum Labels {
+      /// In multiplayer mode you play with others and get points according to the distance of your answer from the correct location
+      internal static let description = Strings.tr("Localizable", "MultiplayerView.Labels.Description", fallback: "In multiplayer mode you play with others and get points according to the distance of your answer from the correct location")
+      /// Multiplayer
+      internal static let title = Strings.tr("Localizable", "MultiplayerView.Labels.Title", fallback: "Multiplayer")
     }
   }
   internal enum ScoreboardView {

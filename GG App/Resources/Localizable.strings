@@ -14,8 +14,24 @@
 "GameView.Labels.Scoreboard" = "Score";
 "GameView.Labels.GameEnded" = "The game has ended. Your score is: %@";
 
+// MARK: - LobbyView
+"LobbyView.Labels.Title" = "Multiplayer lobby";
+"LobbyView.Host.Buttons.Start" = "Start game!";
+"LobbyView.Host.Labels.LobbyId" = "The lobby id is:";
+"LobbyView.Join.Buttons.Join" = "Join lobby!";
+"LobbyView.Join.Inputs.LobbyId" = "id here";
+"LobbyView.Join.Inputs.Username" = "username here";
+"LobbyView.Join.Labels.LobbyId" = "Enter lobby id:";
+"LobbyView.Join.Labels.Username" = "Enter username:";
+"LobbyView.Error.unknown" = "Error! Please try again.";
+
 // MARK: - MapView
 "MapView.Buttons.Done" = "Done";
+
+// MARK: - MultiplayerView
+"MultiplayerView.Buttons.Play" = "Play!";
+"MultiplayerView.Labels.Title" = "Multiplayer";
+"MultiplayerView.Labels.Description" = "In multiplayer mode you play with others and get points according to the distance of your answer from the correct location";
 
 // MARK: - ScoreboardView
 "ScoreboardView.NavigationTitle" = "Scoreboard";

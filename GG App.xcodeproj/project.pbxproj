@@ -11,6 +11,9 @@
 		0AD1BA2F6CB7AA9ECA69B936 /* Pods_GG_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4446AB04B280CCB161E2C /* Pods_GG_App.framework */; };
 		27A95EC886ED6DF7CBDF3B65 /* Pods_GG_App_GG_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA46EBE4038D53C66619192F /* Pods_GG_App_GG_AppUITests.framework */; };
 		D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */; };
+		D52534F929336DAF0045CF26 /* LobbyView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534F829336DAF0045CF26 /* LobbyView+ViewModel.swift */; };
+		D52534FC29339AAF0045CF26 /* InLobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534FB29339AAF0045CF26 /* InLobbyView.swift */; };
+		D52534FE29339ABF0045CF26 /* InLobbyView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534FD29339ABF0045CF26 /* InLobbyView+ViewModel.swift */; };
 		D5372B662922AD4500D1D938 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B652922AD4500D1D938 /* GameService.swift */; };
 		D5372B682922AEAA00D1D938 /* GameServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B672922AEAA00D1D938 /* GameServiceModel.swift */; };
 		D5372B6A2922BE2A00D1D938 /* SingleplayerLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */; };
@@ -68,6 +71,9 @@
 		7E952EB7C327C4F48F48E238 /* Pods-GG App-GG AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App-GG AppUITests.release.xcconfig"; path = "Target Support Files/Pods-GG App-GG AppUITests/Pods-GG App-GG AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F40A118BFC369AEE9133A4A /* Pods-GG App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GG App.debug.xcconfig"; path = "Target Support Files/Pods-GG App/Pods-GG App.debug.xcconfig"; sourceTree = "<group>"; };
 		D51EDEAF290EA9E700D3790D /* ScoreboardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreboardView+ViewModel.swift"; sourceTree = "<group>"; };
+		D52534F829336DAF0045CF26 /* LobbyView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyView+ViewModel.swift"; sourceTree = "<group>"; };
+		D52534FB29339AAF0045CF26 /* InLobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLobbyView.swift; sourceTree = "<group>"; };
+		D52534FD29339ABF0045CF26 /* InLobbyView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InLobbyView+ViewModel.swift"; sourceTree = "<group>"; };
 		D5372B652922AD4500D1D938 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		D5372B672922AEAA00D1D938 /* GameServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceModel.swift; sourceTree = "<group>"; };
 		D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SingleplayerLocations.plist; sourceTree = "<group>"; };
@@ -144,6 +150,15 @@
 				4163B0C0B10B51FB2F37E687 /* Pods_GG_AppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D52534FA29339A900045CF26 /* InLobbyView */ = {
+			isa = PBXGroup;
+			children = (
+				D52534FB29339AAF0045CF26 /* InLobbyView.swift */,
+				D52534FD29339ABF0045CF26 /* InLobbyView+ViewModel.swift */,
+			);
+			path = InLobbyView;
 			sourceTree = "<group>";
 		};
 		D5372B642922AD3500D1D938 /* Services */ = {
@@ -289,7 +304,9 @@
 		D5DED7A72905793400E5AB73 /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
+				D52534FA29339A900045CF26 /* InLobbyView */,
 				D55FF2382906936E006A0A12 /* LobbyView.swift */,
+				D52534F829336DAF0045CF26 /* LobbyView+ViewModel.swift */,
 			);
 			path = Lobby;
 			sourceTree = "<group>";
@@ -665,7 +682,10 @@
 				D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */,
 				D58EBEC9290FEC9500305A27 /* GoogleMapsView.swift in Sources */,
 				D58EBED2291030C800305A27 /* GoogleStreetViewView.swift in Sources */,
+				D52534FC29339AAF0045CF26 /* InLobbyView.swift in Sources */,
+				D52534FE29339ABF0045CF26 /* InLobbyView+ViewModel.swift in Sources */,
 				D55FF2392906936E006A0A12 /* LobbyView.swift in Sources */,
+				D52534F929336DAF0045CF26 /* LobbyView+ViewModel.swift in Sources */,
 				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
 				D58EBECE2910292D00305A27 /* MapView.swift in Sources */,
 				D58EBED029102A1A00305A27 /* MapView+Extensions.swift in Sources */,

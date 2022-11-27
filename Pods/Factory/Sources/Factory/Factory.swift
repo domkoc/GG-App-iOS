@@ -49,7 +49,7 @@ public struct Factory<T> {
 
     /// Registers a new factory that will be used to create and return an instance of the desired object type.
     ///
-    /// This registration overrides the orginal factory and its result will be returned on all new object resolutions. Registering a new
+    /// This registration overrides the original factory and its result will be returned on all new object resolutions. Registering a new
     /// factory also clears the previous instance from the associated scope.
     ///
     /// All registrations are stored in SharedContainer.Registrations.
@@ -90,7 +90,7 @@ public struct ParameterFactory<P, T> {
 
     /// Registers a new factory that will be used to create and return an instance of the desired object type.
     ///
-    /// This registration overrides the orginal factory and its result will be returned on all new object resolutions. Registering a new
+    /// This registration overrides the original factory and its result will be returned on all new object resolutions. Registering a new
     /// factory also clears the previous instance from the associated scope.
     ///
     /// All registered factories are stored in SharedContainer.Registrations.
@@ -116,7 +116,7 @@ open class SharedContainer {
 
     public class Registrations {
 
-        /// Pushes the current set of registration overrides onto a stack. Useful when testing when you want to push the current set of registions,
+        /// Pushes the current set of registration overrides onto a stack. Useful when testing when you want to push the current set of registrations,
         /// add your own, test, then pop the stack to restore the world to its original state.
         public static func push() {
             defer { lock.unlock() }
@@ -348,6 +348,20 @@ extension SharedContainer.Scope {
 }
 #endif
 
+/// Enable automatic registrations
+public protocol AutoRegistring {
+    static func registerAllServices()
+}
+
+extension Container {
+    fileprivate static var autoRgistrationCheck: Bool = {
+        if let registering = (Container() as Any) as? AutoRegistring {
+            type(of: registering).registerAllServices()
+        }
+        return true
+    }()
+}
+
 /// Internal box protocol for factories
 private protocol AnyFactory {}
 
@@ -365,6 +379,7 @@ private struct Registration<P, T> {
 
     /// Resolves registration returning cached value from scope or new instance from factory. This is pretty much the heart of Factory.
     func resolve(_ params: P) -> T {
+        let _ = Container.autoRgistrationCheck
         let currentFactory: (P) -> T = (SharedContainer.Registrations.factory(for: id) as? TypedFactory<P, T>)?.factory ?? factory
         let instance: T = scope?.resolve(id: id, factory: { currentFactory(params) }) ?? currentFactory(params)
         SharedContainer.Decorator.decorate?(instance)

@@ -9,20 +9,48 @@ import CoreLocation
 import SwaggerClient
 
 protocol GameServiceProtocol {
-    var username: String { get set }
+    var username: String { get }
 
     func getRound(completion: @escaping ((_ data: GameServiceModel.Round?, _ error: Error?) -> Void))
-    func submitAnswers(answers: AnswersDTO, completion: @escaping ((GameStateDTOPlayers?, Error?) -> Void))
+    func submitAnswers(answers: AnswersDTO, completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void))
 }
 
 // MARK: - Multiplayer
 final class MultiplayerService {
     var username = ""
-}
+    var lobbyId = ""
+    var isHost = false
+    var gameState = GameStateDTO()
 
-extension MultiplayerService: GameServiceProtocol {
+    func joinLobby(lobby: LobbyDTO, completion: @escaping ((_ data: LobbyDTO?, _ error: Error?) -> Void)) {
+        LobbyAPI.joinLobby(body: lobby) { [weak self] data, error in
+            switch error {
+            case .none:
+                self?.username = data?.username ?? ""
+                self?.lobbyId = data?.lobbyId ?? ""
+                completion(data, error)
+            case .some(let error):
+                completion(data, error)
+            }
+        }
+    }
+
+    func createLobby(lobby: LobbyDTO, completion: @escaping ((_ data: LobbyDTO?, _ error: Error?) -> Void)) {
+        LobbyAPI.createLobby(body: lobby) { [weak self] data, error in
+            switch error {
+            case .none:
+                self?.username = data?.username ?? ""
+                self?.lobbyId = data?.lobbyId ?? ""
+                self?.isHost = true
+                completion(data, error)
+            case .some(let error):
+                completion(data, error)
+            }
+        }
+    }
+
     func getRound(completion: @escaping ((_ data: GameServiceModel.Round?, _ error: Error?) -> Void)) {
-        GameAPI.getTasks { data, error in
+        GameAPI.getTasks(lobbyId: self.lobbyId) { data, error in
             switch error {
             case .none:
                 completion(.init(from: data), nil)
@@ -32,31 +60,42 @@ extension MultiplayerService: GameServiceProtocol {
             }
         }
     }
-    func submitAnswers(answers: AnswersDTO, completion: @escaping ((GameStateDTOPlayers?, Error?) -> Void)) {
-        GameAPI.postTasks(body: answers) { data, error in
+
+    func startGame(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
+        LobbyAPI.startLobby(lobbyId: self.lobbyId, completion: completion)
+    }
+}
+
+extension MultiplayerService: GameServiceProtocol {
+    func submitAnswers(answers: AnswersDTO, completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
+        GameAPI.postTasks(body: answers, lobbyId: self.lobbyId) { [weak self] _, error in
             switch error {
             case .none:
-                GameAPI.getGameState { data, error in
+                GameAPI.getGameState(lobbyId: self!.lobbyId) { data, error in
                     switch error {
                     case .none:
-                        completion(data?.players, nil)
+                        completion(data, nil)
                     case .some(let error):
-                        print("-> Error in request getGameState: \(error)")
                         completion(nil, error)
                     }
                 }
             case .some(let error):
-                print("-> Error in request postTasks: \(error)")
+                print("-> Error in request getGameState: \(error)")
                 completion(nil, error)
             }
         }
+    }
+    func getGameState(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
+        GameAPI.getGameState(lobbyId: self.lobbyId, completion: completion)
     }
 }
 
 // MARK: - Singleplayer
 final class SingleplayerService {
     var username = ""
+    var score = 0.0
     var round: GameServiceModel.Round
+    var answerCount = 0
 
     init(rounds: Int) {
         guard let filePath = Bundle.main.path(forResource: "SingleplayerLocations", ofType: "plist") else {
@@ -97,17 +136,22 @@ extension SingleplayerService: GameServiceProtocol {
         completion(round, nil)
     }
 
-    func submitAnswers(answers: AnswersDTO, completion: @escaping ((GameStateDTOPlayers?, Error?) -> Void)) {
-        var score = 0.0
+    func submitAnswers(answers: AnswersDTO, completion: @escaping ((GameStateDTO?, Error?) -> Void)) {
+        self.answerCount += 1
         answers.answers?.forEach { answer in
             guard let task = round.tasks.first(where: { $0.title == answer.title }) else { return }
             score += calculatePoints(answer: answer.coordinates!.clLocationValue, task: task.coordinates)
         }
         completion(
             .init(
-                username: answers.username,
-                score: Int(score.rounded()),
-                isPlaying: true
+                state: .start,
+                players: [
+                    .init(
+                    username: answers.username,
+                    score: Int(self.score.rounded()),
+                    isPlaying: self.answerCount < round.tasks.count
+                    )
+                ]
             ),
             nil
         )

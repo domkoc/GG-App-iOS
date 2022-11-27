@@ -38,9 +38,9 @@ Failure to find a matching type can lead to an application crash if we attempt t
   
  ## A Simple Example
  
- Most container-based dependency injection systems require you to define in some way that a given service type is available for injection and many reqire some sort of factory or mechanism that will provide a new instance of the service when needed.
+Most container-based dependency injection systems require you to define in some way that a given service type is available for injection and many require some sort of factory or mechanism that will provide a new instance of the service when needed.
  
- Factory is no exception. Here's a simple dependency registraion.
+ Factory is no exception. Here's a simple dependency registration.
  
 ```swift
 extension Container {
@@ -101,7 +101,7 @@ Just call the desired specific factory as a function and you'll get an instance 
 
 ## Mocking and Testing
 
-If we go back and look at our view model code one might wonder why we've gone to all of this trouble? Why not simply say `let myService = MyService()` and be done with it? 
+If we go back and look at our original view model code one might wonder why we've gone to all of this trouble? Why not simply say `let myService = MyService()` and be done with it? 
 
 Or keep the container idea, but write something similar to this…
 
@@ -211,7 +211,7 @@ Like it or not, some services require one or more parameters to be passed to the
 
 ```swift
 extension Container {
-    static var argumentService = ParameterFactory<Int, MyServiceType> { n in
+    static var parameterService = ParameterFactory<Int, MyServiceType> { n in
         ParameterService(value: n)
     }
 }
@@ -281,6 +281,22 @@ Next, note that Factory is *thread-safe.* Registrations and resolutions lock and
 
 And finally, note that calling register also *removes any cached dependency from its associated scope.* This ensures that any new dependency injection request performed from that point on will always get the most recently defined instance of an object.
 
+## AutoRegistering
+
+If you use the above technique to create optional registrations across multiple modules in your project you may find that you need to register some instances prior to application initialization. If so you can do the following.
+```swift
+extension Container: AutoRegistring {
+    static func registerAllServices() {
+        autoRegisteredService.register {
+            ModuleA.register()
+            ModuleB.register()
+            ...
+        }
+    }
+}
+```
+Just make `Container` conform to `AutoRegistering` and provide the `registerAllServices` static function. This function will be called *once* prior to the very first Factory service resolution.
+
 ## Lazy and Weak Injections
 Factory also has `LazyInjected` and `WeakLazyInjected` property wrappers. Use `LazyInjected` when you want to defer construction of some class until it's actually needed. Here the child `service` won't be instantiated until the `test` function is called.
 ```swift
@@ -315,6 +331,61 @@ Note that if you use `WeakLazyInjected` then that class must have been instantia
 ```swift
 weak var gone: MyClass? = MyClass()
 ```
+
+## Functional Injection
+
+Factory can inject more than service classes and structs. Functional Injection is a powerful tool that can, in many cases, eliminate the need for defining protocols, implementations, and the various stubs and mocks one needs when doing traditional Protocol-Oriented-Programing.
+
+Consider:
+```swift
+typealias AccountProviding = () async throws -> [Account]
+
+extension Container {
+    static let accountProvider = Factory<AccountProviding> {
+        { try await Network.get(path: "/accounts") }
+    }
+}
+```
+And here's the view model that utilizes it.
+```swift
+class AccountViewModel: ObservableObject {
+    @Injected(Container.accountProvider) var accountProvider
+    @Published var accounts: [Account] = []
+    @MainActor func load() async {
+        do {
+            accounts = try await accountProvider()
+        } catch {
+            print(error)
+        }
+    }
+}
+```
+Now consider how easy it is to write a test with mock accounts...
+```swift
+func testAllAccounts() async {
+    Container.accountProvider.register {{ Account.mockAccounts }}
+    do {
+        let viewModel = AccountViewModel()
+        try await viewModel.load()
+        XCTAssert(viewModel.accounts.count == 5)
+    } catch {
+        XCTFail("Account load failed")
+    }
+}
+```
+Or test edge cases like no accounts found. Or test specifc errors.
+```swift
+func testEmptyAccounts() async {
+    Container.accountProvider.register {{ [] }}
+    ...
+}
+
+func testErrorLoadingAccounts() async {
+    Container.accountProvider.register {{ throw APIError.network }}
+    ...
+}
+```
+Here's an article that goes into the technique in more detail: [Factory and Functional Dependency Injection](https://betterprogramming.pub/factory-and-functional-dependency-injection-2d0a38042d05)
 
 ## Custom Containers
 
@@ -355,7 +426,64 @@ extension SharedContainer {
 ```
 As mentioned earlier, any registrations defined with your app are managed here.
 
-## Setup
+## SwiftUI Integrations
+
+Note that you can also use the Service Locator pattern in SwiftUI to assign a dependency to a `StateObject` or `ObservedObject`.
+```swift
+class ContentView: ObservableObject {
+    @StateObject private var viewModel = Container.contentViewModel()
+    var body: some View {
+        ...
+    }
+}
+```
+Keep in mind that if you assign to an `ObservedObject` your Factory is responsible for managing the object's lifecycle (see the section on Scopes below).
+
+Unlike Resolver, Factory doesn't have an @InjectedObject property wrapper. There are [a few reasons for this](https://github.com/hmlongco/Factory/issues/15), but for now doing your own assignment to `StateObject` or `ObservedObject` is the preferred approach. 
+
+That said, at this point in time I feel that we should probably avoid using Factory to create the view model in the first place.  It's usually unneccesary, [you really can't use protocols with view models anyway](https://betterprogramming.pub/swiftui-view-models-are-not-protocols-8c415c0325b1), and for the most part Factory's really designed to provide the VM and other services with the dependencies that *they* need. 
+
+Especially since those services have no access to the environment.
+
+## SwiftUI Previews
+
+With that in mind, here's an example of updating a view model's service dependency in order to setup a particular state for  preview.
+
+```swift
+class ContentView: ObservableObject {
+    @StateObject var viewModel = ContentViewModel()
+    var body: some View {
+        ...
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        let _ = Container.myService.register { MockServiceN(4) }
+        ContentView()
+    }
+}
+```
+If we can control where the view model gets its data then we can put the view model into pretty much any state we choose.
+
+If we want to do multiple previews at once, each with different data, we simply need to instantiate our view models and pass them into the view as parameters.
+```swift
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            let _ = Container.myService.register { MockServiceN(4) }
+            let vm1 = ContentViewModel()
+            ContentView(viewModel: vm1)
+
+            let _ = Container.myService.register { MockServiceN(8) }
+            let vm2 = ContentViewModel()
+            ContentView(viewModel: vm2)
+        }
+    }
+}
+```
+
+## Common Setup
 
 If we have several mocks that we use all of the time in our previews or unit tests, we can also add a setup function to a given container to make this easier.
 
@@ -434,25 +562,31 @@ But Factory is smaller, faster, cleaner and all in all a much better solution th
 
 Factory is available as a Swift Package. Just add it to your projects.
 
+It's also available via CocoaPods. Just add `pod Factory` to your Podfile.
+
+Finally, Factory is just a single file. Download the project and then add Factory.swift to your project. It's that easy.
+
 ## License
 
 Factory is available under the MIT license. See the LICENSE file for more info.
 
 ## Author
 
-Factory was designed, implemented, documented, and maintained by [Michael Long](https://www.linkedin.com/in/hmlong/), a Senior Lead iOS engineer at [CRi Solutions](https://www.clientresourcesinc.com/solutions/). CRi is a leader in developing cutting edge iOS, Android, and mobile web applications and solutions for our corporate and financial clients.
+Factory is designed, implemented, documented, and maintained by [Michael Long](https://www.linkedin.com/in/hmlong/), a Lead iOS Software Engineer and a Top 1,000 Technology Writer on Medium.
 
-* Email: [mlong@clientresourcesinc.com](mailto:mlong@clientresourcesinc.com)
+* LinkedIn: [@hmlong](https://www.linkedin.com/in/hmlong/)
+* Medium: [@michaellong](https://medium.com/@michaellong)
 * Twitter: @hmlco
 
-He was also one of Google's [Open Source Peer Reward](https://opensource.googleblog.com/2021/09/announcing-latest-open-source-peer-bonus-winners.html) winners in 2021 for his work on Resolver.
+Michael was also one of Google's [Open Source Peer Reward](https://opensource.googleblog.com/2021/09/announcing-latest-open-source-peer-bonus-winners.html) winners in 2021 for his work on Resolver.
 
 ## Additional Resources
 
+* [Factory and Functional Dependency Injection](https://betterprogramming.pub/factory-and-functional-dependency-injection-2d0a38042d05)
 * [Resolver: A Swift Dependency Injection System](https://github.com/hmlongco/Resolver)
-* [Builder: A Declarative UIKit Library (Uses Factory in Demo)](https://github.com/hmlongco/Builder)
 * [Inversion of Control Design Pattern ~ Wikipedia](https://en.wikipedia.org/wiki/Inversion_of_control)
 * [Inversion of Control Containers and the Dependency Injection pattern ~ Martin Fowler](https://martinfowler.com/articles/injection.html)
 * [Nuts and Bolts of Dependency Injection in Swift](https://cocoacasts.com/nuts-and-bolts-of-dependency-injection-in-swift/)
 * [Dependency Injection in Swift](https://cocoacasts.com/dependency-injection-in-swift)
 * [Swift 5.1 Takes Dependency Injection to the Next Level](https://medium.com/better-programming/taking-swift-dependency-injection-to-the-next-level-b71114c6a9c6)
+* [Builder: A Declarative UIKit Library (Uses Factory in Demo)](https://github.com/hmlongco/Builder)

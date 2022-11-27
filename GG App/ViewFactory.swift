@@ -39,8 +39,12 @@ enum ViewFactory {
     }
 
     // MARK: - Lobby Scene
-    static func lobbyView() -> LobbyView {
-        Container.lobbyView()
+    static func lobbyView(isHost: Bool) -> LobbyView {
+        Container.lobbyView(isHost)
+    }
+
+    static func inLobbyView() -> InLobbyView {
+        Container.inLobbyView()
     }
 
     // MARK: - Scoreboard Scene

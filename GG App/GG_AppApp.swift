@@ -8,7 +8,6 @@
 import GoogleMaps
 import SwiftUI
 
-// no changes in your AppDelegate class
 // swiftlint:disable file_types_order
 class AppDelegate: NSObject, UIApplicationDelegate {
     private var googleMapsApiKey: String {
@@ -34,7 +33,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct GGAppApp: App {
-    // inject into SwiftUI life-cycle via adaptor !!!
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

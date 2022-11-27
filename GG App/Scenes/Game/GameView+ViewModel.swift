@@ -81,21 +81,21 @@ extension GameView.ViewModel {
         case .loading:
             self.gameState = .ready
         case .ready:
-            self.advanceToNextRound()
+            self.advanceToNextTaskOrRound()
         case .streetView:
             self.gameState = .map
         case .map:
             advanceToScoreboard()
         case .scoreboard:
-            advanceToNextRound()
+            self.advanceToNextTaskOrRound()
         case .ended:
             self.navigateBack?()
         }
     }
 
-    func advanceToNextRound() {
+    func advanceToNextTaskOrRound() {
         if tasks.isEmpty {
-            self.gameState = .ended
+            self.getRound()
         } else {
             self.currentTask = self.tasks.popLast()
             self.gameState = .streetView
@@ -103,19 +103,24 @@ extension GameView.ViewModel {
     }
 
     private func advanceToScoreboard() {
+        self.gameState = .scoreboard
         gameService.submitAnswers(
             answers: AnswersDTO(
                 username: gameService.username,
                 answers: self.answers
             )
-        ) { gameState, error in
+        ) { [weak self] gameState, error in
             switch error {
             case .none:
-                self.score += gameState?.score ?? 0
+                let player = gameState?.players?.first(where: { $0.username == self?.gameService.username })
+                var userScore = player?.score
+                self?.score = userScore ?? 0
+                if player?.isPlaying == false {
+                    self?.gameState = .ended
+                }
             case .some(let error):
-                self.error = error
+                self?.error = error
             }
         }
-        self.gameState = .scoreboard
     }
 }

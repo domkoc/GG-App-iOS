@@ -64,6 +64,7 @@ struct GameView: View {
 }
 
 #if DEBUG
+import SwaggerClient
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         ViewFactory.gameView(type: .multiplayer)

@@ -9,6 +9,14 @@ import CoreLocation
 import Factory
 
 extension Container {
+    // MARK: - Services
+    static let singlePlayerGameService = Factory {
+        SingleplayerService(rounds: 3)
+    }
+    static let multiPlayerGameService = Factory(scope: .shared) {
+        MultiplayerService()
+    }
+
     // MARK: - Game Scene
     private static let gameRouter = Factory(scope: .shared) {
         GameRouter()
@@ -21,10 +29,10 @@ extension Container {
         GameView(vm: multiplayerGameViewModel())
     }
     private static let singleplayerGameViewModel = Factory {
-        GameView.ViewModel(router: gameRouter(), gameService: SingleplayerService(rounds: 3))
+        GameView.ViewModel(router: gameRouter(), gameService: singlePlayerGameService())
     }
     private static let multiplayerGameViewModel = Factory {
-        GameView.ViewModel(router: gameRouter(), gameService: MultiplayerService())
+        GameView.ViewModel(router: gameRouter(), gameService: multiPlayerGameService())
     }
 
     static let streetViewView = Factory {
@@ -49,8 +57,18 @@ extension Container {
     }
 
     // MARK: - Lobby Scene
-    static let lobbyView = Factory {
-        LobbyView()
+    static let lobbyView = ParameterFactory<Bool, LobbyView> { isHost in
+        LobbyView(vm: lobbyViewModel(isHost))
+    }
+    private static let lobbyViewModel = ParameterFactory<Bool, LobbyView.ViewModel> { isHost in
+        LobbyView.ViewModel(isPlayerLobbyHost: isHost, multiPlayerGameService: multiPlayerGameService())
+    }
+
+    static let inLobbyView = Factory {
+        InLobbyView(vm: inLobbyViewModel())
+    }
+    private static let inLobbyViewModel = Factory {
+        InLobbyView.ViewModel(multiPlayerGameService: multiPlayerGameService())
     }
 
     // MARK: - Scoreboard Scene
