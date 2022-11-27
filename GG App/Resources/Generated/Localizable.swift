@@ -14,11 +14,13 @@ internal enum Strings {
     internal enum Buttons {
       /// Next
       internal static let next = Strings.tr("Localizable", "GameView.Buttons.Next", fallback: "Next")
+      /// Start!
+      internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Start!")
       /// Localizable.strings
       ///   GG App
       /// 
       ///   Created by Kocka Dominik Csaba on 2022. 10. 23..
-      internal static let ready = Strings.tr("Localizable", "GameView.Buttons.Ready", fallback: "Start!")
+      internal static let reload = Strings.tr("Localizable", "GameView.Buttons.Reload", fallback: "Reload!")
     }
     internal enum Labels {
       /// The game has ended. Your score is: %@
@@ -33,10 +35,36 @@ internal enum Strings {
       internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
     }
   }
+  internal enum InLobbyView {
+    internal enum Buttons {
+      /// Reload!
+      internal static let reload = Strings.tr("Localizable", "InLobbyView.Buttons.Reload", fallback: "Reload!")
+      /// Start!
+      internal static let start = Strings.tr("Localizable", "InLobbyView.Buttons.Start", fallback: "Start!")
+    }
+    internal enum Error {
+      /// Error! Please try again.
+      internal static let unknown = Strings.tr("Localizable", "InLobbyView.Error.unknown", fallback: "Error! Please try again.")
+      internal enum Buttons {
+        /// OK
+        internal static let ok = Strings.tr("Localizable", "InLobbyView.Error.Buttons.Ok", fallback: "OK")
+      }
+    }
+    internal enum Labels {
+      /// Please wait, the loading lobby is:
+      internal static let loading = Strings.tr("Localizable", "InLobbyView.Labels.Loading", fallback: "Please wait, the loading lobby is:")
+      /// Anonymous
+      internal static let noname = Strings.tr("Localizable", "InLobbyView.Labels.Noname", fallback: "Anonymous")
+    }
+  }
   internal enum LobbyView {
     internal enum Error {
       /// Error! Please try again.
       internal static let unknown = Strings.tr("Localizable", "LobbyView.Error.unknown", fallback: "Error! Please try again.")
+      internal enum Buttons {
+        /// OK
+        internal static let ok = Strings.tr("Localizable", "LobbyView.Error.Buttons.Ok", fallback: "OK")
+      }
     }
     internal enum Host {
       internal enum Buttons {

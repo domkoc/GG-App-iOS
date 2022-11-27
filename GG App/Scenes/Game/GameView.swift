@@ -48,7 +48,7 @@ struct GameView: View {
                                 vm.advance()
                             }
                         } else {
-                            Button("reload") {
+                            Button(Txt.Buttons.reload) {
                                 vm.pollState()
                             }
                         }

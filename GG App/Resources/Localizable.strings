@@ -7,12 +7,21 @@
 */
 
 // MARK: - GameView
+"GameView.Buttons.Reload" = "Reload!";
 "GameView.Buttons.Ready" = "Start!";
 "GameView.Buttons.Next" = "Next";
 "GameView.Labels.ReadyDescription" = "The game has loaded. Are you ready?";
 "GameView.Labels.Loading" = "The game is loading, please wait...";
 "GameView.Labels.Scoreboard" = "Score";
 "GameView.Labels.GameEnded" = "The game has ended. Your score is: %@";
+
+// MARK: - InLobbyView
+"InLobbyView.Buttons.Reload" = "Reload!";
+"InLobbyView.Buttons.Start" = "Start!";
+"InLobbyView.Labels.Noname" = "Anonymous";
+"InLobbyView.Labels.Loading" = "Please wait, the loading lobby is:";
+"InLobbyView.Error.unknown" = "Error! Please try again.";
+"InLobbyView.Error.Buttons.Ok" = "OK";
 
 // MARK: - LobbyView
 "LobbyView.Labels.Title" = "Multiplayer lobby";
@@ -23,6 +32,7 @@
 "LobbyView.Join.Inputs.Username" = "username here";
 "LobbyView.Join.Labels.LobbyId" = "Enter lobby id:";
 "LobbyView.Join.Labels.Username" = "Enter username:";
+"LobbyView.Error.Buttons.Ok" = "OK";
 "LobbyView.Error.unknown" = "Error! Please try again.";
 
 // MARK: - MapView

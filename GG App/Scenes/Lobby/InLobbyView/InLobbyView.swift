@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InLobbyView: View {
+    typealias Txt = Strings.InLobbyView
+
     @StateObject var vm: ViewModel
 
     var body: some View {
@@ -18,35 +20,35 @@ struct InLobbyView: View {
                         if let username = player.username {
                             Text(username)
                         } else {
-                            Text("noname")
+                            Text(Txt.Labels.noname)
                         }
                     }
                 }
                 Spacer()
                 HStack {
                     Spacer()
-                    Button("reload", action: vm.pollGameState)
+                    Button(Txt.Buttons.reload, action: vm.pollGameState)
                     Spacer()
                     if vm.multiPlayerGameService.isHost || vm.gamestate.state == .start {
-                        Button("start", action: vm.startGame)
+                        Button(Txt.Buttons.start, action: vm.startGame)
                         Spacer()
                     }
                 }
             }
-            .alert(vm.error?.localizedDescription ?? "Txt.Error.unknown", isPresented: $vm.isThereAnError) {
-                Button("OK", role: .cancel) { }
+            .alert(vm.error?.localizedDescription ?? Txt.Error.unknown, isPresented: $vm.isThereAnError) {
+                Button(Txt.Error.Buttons.ok, role: .cancel) { }
             }
         } else {
             VStack {
                 Spacer()
-                Text("loading lobby:")
+                Text(Txt.Labels.loading)
                 Text(vm.multiPlayerGameService.lobbyId)
                 Spacer()
-                Button("reload", action: vm.pollGameState)
+                Button(Txt.Buttons.reload, action: vm.pollGameState)
             }
             .onAppear(perform: vm.onAppear)
-            .alert(vm.error?.localizedDescription ?? "Txt.Error.unknown", isPresented: $vm.isThereAnError) {
-                Button("OK", role: .cancel) { }
+            .alert(vm.error?.localizedDescription ?? Txt.Error.unknown, isPresented: $vm.isThereAnError) {
+                Button(Txt.Error.Buttons.ok, role: .cancel) { }
             }
         }
         NavigationLink(isActive: $vm.isShowingGameView) {

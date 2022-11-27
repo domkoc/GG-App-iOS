@@ -58,7 +58,7 @@ struct LobbyView: View {
             }
         }
         .alert(vm.error?.localizedDescription ?? Txt.Error.unknown, isPresented: $vm.isThereAnError) {
-            Button("OK", role: .cancel) { }
+            Button(Txt.Error.Buttons.ok, role: .cancel) { }
         }
     }
 }
