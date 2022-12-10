@@ -24,11 +24,11 @@ extension GameView {
         @Published var router: GameRouter
         @Published var streetViewView: GoogleStreetViewView
         @Published var gameState = GameState.loading
-        @Published var isSelectionOnMapDone = false
         @Published var error: Error?
         @Published var score = 0
         @Published var timeRemaining = 10000
         @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        @Published var pollTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
         @Published var hasAllSubmitted = false
         var tasks: [GameServiceModel.Task] {
             didSet {
@@ -53,6 +53,7 @@ extension GameView {
             self.streetViewView = GoogleStreetViewView(coordinate: CLLocationCoordinate2D())
             self.gameService = gameService
             self.tasks = []
+            self.pollTimer.upstream.connect().cancel()
         }
     }
 }
@@ -109,6 +110,7 @@ extension GameView.ViewModel {
     }
 
     func advanceToNextTaskOrRound() {
+        pollTimer.upstream.connect().cancel()
         if tasks.isEmpty {
             self.getRound()
         } else {
@@ -121,6 +123,8 @@ extension GameView.ViewModel {
 
     func advanceToScoreboard() {
         self.gameState = .scoreboard
+        stopTimer()
+        pollTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
         gameService.submitAnswers(
             answers: AnswersDTO(
                 username: gameService.username,
@@ -175,5 +179,9 @@ extension GameView.ViewModel {
                 self?.error = error
             }
         }
+    }
+
+    func stopTimer() {
+        timer.upstream.connect().cancel()
     }
 }

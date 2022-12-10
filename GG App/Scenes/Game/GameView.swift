@@ -54,6 +54,9 @@ struct GameView: View {
                         }
                     }
                 }
+                .onReceive(vm.pollTimer) { _ in
+                    vm.pollState()
+                }
             case .ended:
                 VStack {
                     Text(Txt.Labels.gameEnded(vm.score))
@@ -87,7 +90,7 @@ struct GameView: View {
                 vm.answers.append(AnswersDTOAnswers(title: vm.currentTask?.title, coordinates: RoundDTOCoordinates()))
                 vm.advanceToScoreboard()
                 print("timesup")
-                vm.timer.upstream.connect().cancel()
+                vm.stopTimer()
             }
         }
     }

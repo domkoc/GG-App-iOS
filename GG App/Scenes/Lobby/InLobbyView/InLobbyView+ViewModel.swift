@@ -16,6 +16,7 @@ extension InLobbyView {
         @Published var error: Error?
         @Published var isThereAnError = false
         @Published var isShowingGameView = false
+        @Published var timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 
         init(multiPlayerGameService: MultiplayerService) {
             self.multiPlayerGameService = multiPlayerGameService

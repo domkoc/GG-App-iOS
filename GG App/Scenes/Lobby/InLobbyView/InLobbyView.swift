@@ -53,8 +53,14 @@ struct InLobbyView: View {
         }
         NavigationLink(isActive: $vm.isShowingGameView) {
             ViewFactory.gameView(type: .multiplayer)
+                .onAppear {
+                    vm.timer.upstream.connect().cancel()
+                }
         } label: {
             EmptyView()
+        }
+        .onReceive(vm.timer) { _ in
+            vm.pollGameState()
         }
     }
 }
