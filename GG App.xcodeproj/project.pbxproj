@@ -82,6 +82,7 @@
 		D53766D629214A8D00CAD24E /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
 		D53766D829214B0600CAD24E /* SingleplayerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingleplayerView+ViewModel.swift"; sourceTree = "<group>"; };
 		D53766DC292150FA00CAD24E /* GameView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameView+ViewModel.swift"; sourceTree = "<group>"; };
+		D55382F42944E8850066B920 /* GG-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GG-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D55FF23629069362006A0A12 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D55FF2382906936E006A0A12 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		D55FF23A2906937E006A0A12 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 				D5DED7A029056A4F00E5AB73 /* Scenes */,
 				D5372B642922AD3500D1D938 /* Services */,
 				D5DED7A129056AA000E5AB73 /* DI.swift */,
+				D55382F42944E8850066B920 /* GG-App-Info.plist */,
 				D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */,
 				D53766D42921488C00CAD24E /* Router.swift */,
 				D5DED7A329056AA900E5AB73 /* ViewFactory.swift */,
@@ -861,6 +863,7 @@
 				DEVELOPMENT_TEAM = QZ6PHS2957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GG-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -891,6 +894,7 @@
 				DEVELOPMENT_TEAM = QZ6PHS2957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GG-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
