@@ -40,7 +40,8 @@ struct GameView: View {
                 }
             case .scoreboard:
                 VStack {
-                    Text(vm.score.description)
+                    Spacer()
+                    Text(Txt.Labels.scoreboard(vm.score.description))
                     Spacer()
                     HStack {
                         if vm.hasAllSubmitted {

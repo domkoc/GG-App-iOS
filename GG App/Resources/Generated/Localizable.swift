@@ -31,8 +31,10 @@ internal enum Strings {
       internal static let loading = Strings.tr("Localizable", "GameView.Labels.Loading", fallback: "The game is loading, please wait...")
       /// The game has loaded. Are you ready?
       internal static let readyDescription = Strings.tr("Localizable", "GameView.Labels.ReadyDescription", fallback: "The game has loaded. Are you ready?")
-      /// Score
-      internal static let scoreboard = Strings.tr("Localizable", "GameView.Labels.Scoreboard", fallback: "Score")
+      /// Your score in this round is: %@
+      internal static func scoreboard(_ p1: Any) -> String {
+        return Strings.tr("Localizable", "GameView.Labels.Scoreboard", String(describing: p1), fallback: "Your score in this round is: %@")
+      }
     }
   }
   internal enum InLobbyView {

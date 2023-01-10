@@ -12,7 +12,7 @@
 "GameView.Buttons.Next" = "Next";
 "GameView.Labels.ReadyDescription" = "The game has loaded. Are you ready?";
 "GameView.Labels.Loading" = "The game is loading, please wait...";
-"GameView.Labels.Scoreboard" = "Score";
+"GameView.Labels.Scoreboard" = "Your score in this round is: %@";
 "GameView.Labels.GameEnded" = "The game has ended. Your score is: %@";
 
 // MARK: - InLobbyView
