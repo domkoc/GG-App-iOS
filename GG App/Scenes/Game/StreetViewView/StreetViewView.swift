@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StreetViewView: View {
     @StateObject var vm: ViewModel
-    @State var isUsingGoogleMaps = false
+    @Environment(\.isUsingGoogleMaps) var isUsingGoogleMaps
 
     var body: some View {
         if isUsingGoogleMaps {

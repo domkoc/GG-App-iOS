@@ -38,6 +38,7 @@ struct GGAppApp: App {
     var body: some Scene {
         WindowGroup {
             ViewFactory.welcomeView()
+                .isUsingGoogleMaps(false)
         }
     }
 }

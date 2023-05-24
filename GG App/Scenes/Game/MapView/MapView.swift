@@ -10,9 +10,8 @@ import SwiftUI
 struct MapView: View {
     typealias Txt = Strings.MapView
 
+    @Environment(\.isUsingGoogleMaps) var isUsingGoogleMaps
     @StateObject var vm: ViewModel
-
-    @State var isUsingGoogleMaps = false
 
     var body: some View {
         VStack {

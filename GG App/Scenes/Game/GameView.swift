@@ -12,6 +12,7 @@ struct GameView: View {
 
     @StateObject var vm: ViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.isUsingGoogleMaps) var isUsingGoogleMaps
 
     var body: some View {
         ZStack {
@@ -29,7 +30,7 @@ struct GameView: View {
                 }
             case .streetView:
                 VStack {
-                    if vm.isUsingGoogleMaps {
+                    if isUsingGoogleMaps {
                         vm.streetViewView
                     } else {
                         vm.lookaroundViewView

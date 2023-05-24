@@ -22,7 +22,6 @@ extension GameView {
 
     final class ViewModel: ObservableObject {
         @Published var router: GameRouter
-        @Published var isUsingGoogleMaps = false
         @Published var streetViewView: GoogleStreetViewView
         @Published var lookaroundViewView: MKLookAroundViewControllerView
         @Published var gameState = GameState.loading
@@ -41,11 +40,8 @@ extension GameView {
         }
         var currentTask: GameServiceModel.Task? {
             didSet {
-                if isUsingGoogleMaps {
-                    streetViewView.coordinate = currentTask!.coordinates
-                } else {
-                    lookaroundViewView.coordinate = currentTask!.coordinates
-                }
+                streetViewView.coordinate = currentTask!.coordinates
+                lookaroundViewView.coordinate = currentTask!.coordinates
             }
         }
         var answers: [AnswersDTOAnswers] = []
