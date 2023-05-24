@@ -61,11 +61,8 @@ extension GameServiceModel {
                 return
             }
             self.title = dtoTitle
-            self.coordinates = CLLocationCoordinate2D(
-                latitude: NSDecimalNumber(decimal: dtoLattitude).doubleValue,
-                longitude: NSDecimalNumber(decimal: dtoLongitude).doubleValue
-            )
-            self.seconds = NSDecimalNumber(decimal: dtoSeconds).doubleValue
+            self.coordinates = CLLocationCoordinate2D(latitude: dtoLattitude, longitude: dtoLongitude)
+            self.seconds = dtoSeconds
         }
     }
 }

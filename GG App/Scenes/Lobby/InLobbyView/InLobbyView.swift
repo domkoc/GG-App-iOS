@@ -29,7 +29,7 @@ struct InLobbyView: View {
                     Spacer()
                     Button(Txt.Buttons.reload, action: vm.pollGameState)
                     Spacer()
-                    if vm.multiPlayerGameService.isHost || vm.gamestate.state == .start {
+                    if vm.multiPlayerGameService.isHost || vm.gamestate.state == ._1 {
                         Button(Txt.Buttons.start, action: vm.startGame)
                         Spacer()
                     }

@@ -25,7 +25,7 @@ final class MultiplayerService {
     var gameState = GameStateDTO()
 
     func joinLobby(lobby: LobbyDTO, completion: @escaping ((_ data: LobbyDTO?, _ error: Error?) -> Void)) {
-        LobbyAPI.joinLobby(body: lobby) { [weak self] data, error in
+        LobbyAPI.lobbyJoinPost(body: lobby) { [weak self] data, error in
             switch error {
             case .none:
                 self?.username = data?.username ?? ""
@@ -38,7 +38,7 @@ final class MultiplayerService {
     }
 
     func createLobby(lobby: LobbyDTO, completion: @escaping ((_ data: LobbyDTO?, _ error: Error?) -> Void)) {
-        LobbyAPI.createLobby(body: lobby) { [weak self] data, error in
+        LobbyAPI.lobbyNewPost(body: lobby) { [weak self] data, error in
             switch error {
             case .none:
                 self?.username = data?.username ?? ""
@@ -52,7 +52,7 @@ final class MultiplayerService {
     }
 
     func getRound(completion: @escaping ((_ data: GameServiceModel.Round?, _ error: Error?) -> Void)) {
-        GameAPI.getTasks(lobbyId: self.lobbyId) { data, error in
+        GameAPI.gameLobbyIdRoundGet(lobbyId: self.lobbyId) { data, error in
             switch error {
             case .none:
                 completion(.init(from: data), nil)
@@ -64,16 +64,16 @@ final class MultiplayerService {
     }
 
     func startGame(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
-        LobbyAPI.startLobby(lobbyId: self.lobbyId, completion: completion)
+        LobbyAPI.lobbyLobbyIdStartPost(lobbyId: self.lobbyId, completion: completion)
     }
 }
 
 extension MultiplayerService: GameServiceProtocol {
     func submitAnswers(answers: AnswersDTO, completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
-        GameAPI.postTasks(body: answers, lobbyId: self.lobbyId) { [weak self] _, error in
+        GameAPI.gameLobbyIdRoundPost(lobbyId: self.lobbyId, body: answers) { [weak self] _, error in
             switch error {
             case .none:
-                GameAPI.getGameState(lobbyId: self!.lobbyId) { data, error in
+                GameAPI.gameLobbyIdGet(lobbyId: self!.lobbyId) { data, error in
                     switch error {
                     case .none:
                         completion(data, nil)
@@ -89,15 +89,15 @@ extension MultiplayerService: GameServiceProtocol {
     }
 
     func getGameState(completion: @escaping ((_ data: GameStateDTO?, _ error: Error?) -> Void)) {
-        GameAPI.getGameState(lobbyId: self.lobbyId, completion: completion)
+        GameAPI.gameLobbyIdGet(lobbyId: self.lobbyId, completion: completion)
     }
 
     func getState(completion: @escaping ((SwaggerClient.GameStateDTO?, Error?) -> Void)) {
-        GameAPI.getGameState(lobbyId: self.lobbyId, completion: completion)
+        GameAPI.gameLobbyIdGet(lobbyId: self.lobbyId, completion: completion)
     }
 
     func submitScore(completion: @escaping ((Void?, Error?) -> Void)) {
-        ScoreboardAPI.postScore(body: NewScoreDTO(lobbyId: self.lobbyId, username: self.username), completion: completion)
+        ScoreboardAPI.scoreboardPost(body: NewScoreDTO(lobbyId: self.lobbyId, username: self.username), completion: completion)
     }
 }
 
@@ -146,7 +146,7 @@ extension SingleplayerService: GameServiceProtocol {
     func getState(completion: @escaping ((SwaggerClient.GameStateDTO?, Error?) -> Void)) {
         completion(
             .init(
-                state: .start,
+                state: ._1,
                 players: [
                     .init(
                         username: self.username,
@@ -172,7 +172,7 @@ extension SingleplayerService: GameServiceProtocol {
         }
         completion(
             .init(
-                state: .start,
+                state: ._1,
                 players: [
                     .init(
                     username: answers.username,
@@ -214,13 +214,10 @@ extension SingleplayerService: GameServiceProtocol {
 
 extension RoundDTOCoordinates {
     var clLocationValue: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(
-            latitude: NSDecimalNumber(decimal: lattitude!).doubleValue,
-            longitude: NSDecimalNumber(decimal: longitude!).doubleValue
-        )
+        CLLocationCoordinate2D(latitude: lattitude!, longitude: longitude!)
     }
 
     init(_ coordinate: CLLocationCoordinate2D) {
-        self.init(longitude: Decimal(coordinate.longitude), lattitude: Decimal(coordinate.latitude))
+        self.init(longitude: coordinate.longitude, lattitude: coordinate.latitude)
     }
 }

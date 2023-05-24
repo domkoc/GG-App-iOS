@@ -20,7 +20,7 @@ extension ScoreboardView {
         @Published var scoreData = ScoreboardDTO()
 
         func getData() {
-            ScoreboardAPI.getScoreboard(completion: updateScore)
+            ScoreboardAPI.scoreboardGet(completion: updateScore)
         }
 
         func updateScore(dto: ScoreboardDTO?, error: Error?) {
