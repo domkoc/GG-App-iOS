@@ -29,7 +29,11 @@ struct GameView: View {
                 }
             case .streetView:
                 VStack {
-                    vm.streetViewView
+                    if vm.isUsingGoogleMaps {
+                        vm.streetViewView
+                    } else {
+                        vm.lookaroundViewView
+                    }
                     Button(Txt.Buttons.next) {
                         vm.advance()
                     }

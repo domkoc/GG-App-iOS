@@ -10,10 +10,16 @@ import SwiftUI
 
 struct StreetViewView: View {
     @StateObject var vm: ViewModel
+    @State var isUsingGoogleMaps = false
 
     var body: some View {
-        GoogleStreetViewView(coordinate: vm.coordinates)
-            .ignoresSafeArea()
+        if isUsingGoogleMaps {
+            GoogleStreetViewView(coordinate: vm.coordinates)
+                .ignoresSafeArea()
+        } else {
+            MKLookAroundViewControllerView(coordinate: vm.coordinates)
+                .ignoresSafeArea()
+        }
     }
 }
 

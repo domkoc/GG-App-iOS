@@ -14,6 +14,7 @@
 		D52534F929336DAF0045CF26 /* LobbyView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534F829336DAF0045CF26 /* LobbyView+ViewModel.swift */; };
 		D52534FC29339AAF0045CF26 /* InLobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534FB29339AAF0045CF26 /* InLobbyView.swift */; };
 		D52534FE29339ABF0045CF26 /* InLobbyView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52534FD29339ABF0045CF26 /* InLobbyView+ViewModel.swift */; };
+		D527F45A2A1E9B2F008F6BA6 /* MKMapViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527F4592A1E9B2F008F6BA6 /* MKMapViewView.swift */; };
 		D5372B662922AD4500D1D938 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B652922AD4500D1D938 /* GameService.swift */; };
 		D5372B682922AEAA00D1D938 /* GameServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5372B672922AEAA00D1D938 /* GameServiceModel.swift */; };
 		D5372B6A2922BE2A00D1D938 /* SingleplayerLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */; };
@@ -32,6 +33,7 @@
 		D58EBED2291030C800305A27 /* GoogleStreetViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */; };
 		D58EBED52910333A00305A27 /* StreetViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED42910333A00305A27 /* StreetViewView.swift */; };
 		D58EBED72910334B00305A27 /* StreetViewView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58EBED62910334B00305A27 /* StreetViewView+ViewModel.swift */; };
+		D5A693942A1E88680058DC92 /* MKLookAroundViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A693932A1E88680058DC92 /* MKLookAroundViewControllerView.swift */; };
 		D5DED76D29055AC600E5AB73 /* GG_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */; };
 		D5DED76F29055AC600E5AB73 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DED76E29055AC600E5AB73 /* WelcomeView.swift */; };
 		D5DED77129055AC800E5AB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DED77029055AC800E5AB73 /* Assets.xcassets */; };
@@ -74,6 +76,7 @@
 		D52534F829336DAF0045CF26 /* LobbyView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LobbyView+ViewModel.swift"; sourceTree = "<group>"; };
 		D52534FB29339AAF0045CF26 /* InLobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLobbyView.swift; sourceTree = "<group>"; };
 		D52534FD29339ABF0045CF26 /* InLobbyView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InLobbyView+ViewModel.swift"; sourceTree = "<group>"; };
+		D527F4592A1E9B2F008F6BA6 /* MKMapViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewView.swift; sourceTree = "<group>"; };
 		D5372B652922AD4500D1D938 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		D5372B672922AEAA00D1D938 /* GameServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceModel.swift; sourceTree = "<group>"; };
 		D5372B692922BE2A00D1D938 /* SingleplayerLocations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SingleplayerLocations.plist; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStreetViewView.swift; sourceTree = "<group>"; };
 		D58EBED42910333A00305A27 /* StreetViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetViewView.swift; sourceTree = "<group>"; };
 		D58EBED62910334B00305A27 /* StreetViewView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StreetViewView+ViewModel.swift"; sourceTree = "<group>"; };
+		D5A693932A1E88680058DC92 /* MKLookAroundViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKLookAroundViewControllerView.swift; sourceTree = "<group>"; };
 		D5DED76929055AC600E5AB73 /* GG App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GG App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DED76C29055AC600E5AB73 /* GG_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GG_AppApp.swift; sourceTree = "<group>"; };
 		D5DED76E29055AC600E5AB73 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			children = (
 				D58EBEC8290FEC9500305A27 /* GoogleMapsView.swift */,
 				D58EBED1291030C800305A27 /* GoogleStreetViewView.swift */,
+				D5A693932A1E88680058DC92 /* MKLookAroundViewControllerView.swift */,
+				D527F4592A1E9B2F008F6BA6 /* MKMapViewView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -691,6 +697,8 @@
 				D5DED79E290569BD00E5AB73 /* Localizable.swift in Sources */,
 				D58EBECE2910292D00305A27 /* MapView.swift in Sources */,
 				D58EBED029102A1A00305A27 /* MapView+Extensions.swift in Sources */,
+				D5A693942A1E88680058DC92 /* MKLookAroundViewControllerView.swift in Sources */,
+				D527F45A2A1E9B2F008F6BA6 /* MKMapViewView.swift in Sources */,
 				D53766D52921488C00CAD24E /* Router.swift in Sources */,
 				D55FF23B2906937E006A0A12 /* ScoreboardView.swift in Sources */,
 				D51EDEB0290EA9E700D3790D /* ScoreboardView+ViewModel.swift in Sources */,

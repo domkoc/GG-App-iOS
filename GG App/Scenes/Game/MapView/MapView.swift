@@ -12,12 +12,21 @@ struct MapView: View {
 
     @StateObject var vm: ViewModel
 
+    @State var isUsingGoogleMaps = false
+
     var body: some View {
         VStack {
-            GoogleMapsView(
-                marker: $vm.marker,
-                isNextEnabled: $vm.isButtonEnabled
-            )
+            if isUsingGoogleMaps {
+                GoogleMapsView(
+                    marker: $vm.marker,
+                    isNextEnabled: $vm.isButtonEnabled
+                )
+            } else {
+                MKMapViewView(
+                    customLocation: $vm.mkMapLocation,
+                    isNextEnabled: $vm.isButtonEnabled
+                )
+            }
             Button(Txt.Buttons.done) {
                 print($vm.marker.position)
                 vm.doneSelecting()

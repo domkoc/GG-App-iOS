@@ -22,7 +22,9 @@ extension GameView {
 
     final class ViewModel: ObservableObject {
         @Published var router: GameRouter
+        @Published var isUsingGoogleMaps = false
         @Published var streetViewView: GoogleStreetViewView
+        @Published var lookaroundViewView: MKLookAroundViewControllerView
         @Published var gameState = GameState.loading
         @Published var error: Error?
         @Published var score = 0
@@ -39,7 +41,11 @@ extension GameView {
         }
         var currentTask: GameServiceModel.Task? {
             didSet {
-                streetViewView.coordinate = currentTask!.coordinates
+                if isUsingGoogleMaps {
+                    streetViewView.coordinate = currentTask!.coordinates
+                } else {
+                    lookaroundViewView.coordinate = currentTask!.coordinates
+                }
             }
         }
         var answers: [AnswersDTOAnswers] = []
@@ -51,6 +57,7 @@ extension GameView {
         init(router: GameRouter, gameService: GameServiceProtocol) {
             self.router = router
             self.streetViewView = GoogleStreetViewView(coordinate: CLLocationCoordinate2D())
+            self.lookaroundViewView = MKLookAroundViewControllerView(coordinate: CLLocationCoordinate2D())
             self.gameService = gameService
             self.tasks = []
             self.pollTimer.upstream.connect().cancel()
